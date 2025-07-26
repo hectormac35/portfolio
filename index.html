@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -18,12 +19,14 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#logros">Logros</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
+      <button id="dark-mode-toggle">🌙</button>
     </div>
   </nav>
 
-  <header class="hero" id="inicio">
+  <header class="hero" id="inicio" data-aos="fade-up">
     <div class="container">
       <h1 class="fade-in">Héctor Macarrilla</h1>
       <p class="fade-in delay">Desarrollador de Aplicaciones Multiplataforma</p>
@@ -32,30 +35,38 @@
     </div>
   </header>
 
-  <section id="proyectos">
+  <section id="proyectos" data-aos="fade-up">
     <h2>Proyectos</h2>
     <div class="projects">
       <div class="project-card">
         <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
-        <h3>Proyecto 1</h3>
-        <p>Descripción breve del proyecto 1.</p>
+        <div class="overlay">
+          <h3>Proyecto 1</h3>
+          <p>Descripción breve del proyecto 1.</p>
+          <a href="#" class="btn">Ver Demo</a>
+          <a href="#" class="btn btn-secondary">Ver Código</a>
+        </div>
       </div>
       <div class="project-card">
         <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
-        <h3>Proyecto 2</h3>
-        <p>Descripción breve del proyecto 2.</p>
+        <div class="overlay">
+          <h3>Proyecto 2</h3>
+          <p>Descripción breve del proyecto 2.</p>
+          <a href="#" class="btn">Ver Demo</a>
+          <a href="#" class="btn btn-secondary">Ver Código</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="sobre-mi">
+  <section id="sobre-mi" data-aos="fade-up">
     <h2>Sobre Mí</h2>
     <p>
-      Me apasiona entender cómo las personas interactúan con la tecnología y convertir esas ideas en aplicaciones intuitivas y funcionales. Mi objetivo es crear proyectos que combinen rendimiento, estética y una experiencia de usuario agradable.
+      Me apasiona entender cómo las personas interactúan con la tecnología y convertir esas ideas en aplicaciones intuitivas y funcionales. Busco que cada proyecto aporte valor y ofrezca una experiencia única.
     </p>
   </section>
 
-  <section id="habilidades">
+  <section id="habilidades" data-aos="fade-up">
     <h2>Habilidades</h2>
     <div class="skills">
       <div class="skill-card">
@@ -76,10 +87,18 @@
     </div>
   </section>
 
-  <section id="contacto">
+  <section id="logros" data-aos="fade-up">
+    <h2>Logros y Testimonios</h2>
+    <div class="testimonials">
+      <blockquote>"Héctor destaca por su dedicación y calidad en cada proyecto." – Cliente A</blockquote>
+      <blockquote>"Un desarrollador innovador y confiable." – Compañero de equipo</blockquote>
+    </div>
+  </section>
+
+  <section id="contacto" data-aos="fade-up">
     <h2>Contacto</h2>
     <p>Si quieres colaborar o saber más sobre mi trabajo, ¡hablemos!</p>
-    <a href="mailto:hector.macarrilla@example.com" class="btn">Enviar Email</a>
+    <a href="mailto:hectormacarrilla@gmail.com" class="btn">Enviar Email</a>
   </section>
 
   <footer>
@@ -89,14 +108,20 @@
     </p>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init();
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
+    });
+
+    // Dark mode toggle
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
     });
   </script>
 </body>
