@@ -5,15 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Héctor Macarrilla - Portfolio</title>
+  <meta name="description" content="Portfolio de Héctor Macarrilla, desarrollador de aplicaciones multiplataforma.">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">Héctor</a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
     <div class="container">
       <h1 class="fade-in">Héctor Macarrilla</h1>
       <p class="fade-in delay">Desarrollador de Aplicaciones Multiplataforma</p>
       <a href="#proyectos" class="btn fade-in delay2">Ver Proyectos</a>
+      <a href="cv.pdf" class="btn btn-secondary fade-in delay2" download>Descargar CV</a>
     </div>
   </header>
 
@@ -36,15 +51,53 @@
   <section id="sobre-mi">
     <h2>Sobre Mí</h2>
     <p>
-      Soy un apasionado desarrollador especializado en aplicaciones multiplataforma con tecnologías como Flutter, React Native y .NET MAUI. Me encanta construir soluciones eficientes, escalables y con una excelente experiencia de usuario.
+      Me apasiona entender cómo las personas interactúan con la tecnología y convertir esas ideas en aplicaciones intuitivas y funcionales. Mi objetivo es crear proyectos que combinen rendimiento, estética y una experiencia de usuario agradable.
     </p>
   </section>
 
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Flutter">
+        <h3>Flutter</h3>
+        <div class="progress"><span style="width: 80%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React Native">
+        <h3>React Native</h3>
+        <div class="progress"><span style="width: 70%;"></span></div>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt=".NET MAUI">
+        <h3>.NET MAUI</h3>
+        <div class="progress"><span style="width: 65%;"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Si quieres colaborar o saber más sobre mi trabajo, ¡hablemos!</p>
+    <a href="mailto:hector.macarrilla@example.com" class="btn">Enviar Email</a>
+  </section>
+
   <footer>
-    <p>© 2025 Héctor Macarrilla | 
-       <a href="https://www.linkedin.com/in/hectormac35" target="_blank">LinkedIn</a> 
+    <p>© 2025 Héctor Macarrilla |
+       <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank">LinkedIn</a> |
        <a href="https://github.com/hectormac35" target="_blank">GitHub</a>
     </p>
   </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>

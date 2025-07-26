@@ -4,6 +4,49 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #f5f6f7;
   color: #333;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #4A90E2;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #4A90E2;
 }
 
 .hero {
@@ -14,6 +57,7 @@ body {
   align-items: center;
   text-align: center;
   color: white;
+  padding-top: 60px; /* Navbar height */
 }
 
 .hero .container {
@@ -40,8 +84,16 @@ p {
   transition: background 0.3s ease;
 }
 
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  margin-left: 10px;
+}
+
 .btn:hover {
   background-color: #e6e6e6;
+  color: #4A90E2;
 }
 
 section {
@@ -54,20 +106,21 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.projects {
+.projects, .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.project-card {
+.project-card, .skill-card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  padding: 1rem;
 }
 
-.project-card:hover {
+.project-card:hover, .skill-card:hover {
   transform: translateY(-5px);
 }
 
@@ -75,6 +128,26 @@ h2 {
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 8px;
+  margin-top: 0.5rem;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2, #50C9C3);
 }
 
 footer {
@@ -92,7 +165,6 @@ footer a:hover {
   color: #4A90E2;
 }
 
-/* Animaciones */
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s forwards;
