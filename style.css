@@ -30,13 +30,6 @@ body {
   padding: 0.5rem 2rem;
 }
 
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #4A90E2;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -54,10 +47,10 @@ body {
   color: #4A90E2;
 }
 
-#dark-mode-toggle {
+.nav-buttons button {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   cursor: pointer;
   margin-left: 1rem;
 }
@@ -70,20 +63,11 @@ body {
   align-items: center;
   text-align: center;
   color: white;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .hero .container {
   max-width: 600px;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  font-size: 1.2rem;
 }
 
 .btn {
@@ -94,7 +78,7 @@ p {
   color: #4A90E2;
   border-radius: 25px;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn-secondary {
@@ -106,7 +90,6 @@ p {
 
 .btn:hover {
   background-color: #e6e6e6;
-  color: #4A90E2;
 }
 
 section {
@@ -119,47 +102,27 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.projects, .skills, .certifications, .blog-list {
+.projects, .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.project-card {
-  position: relative;
-  overflow: hidden;
+.project-card, .skill-card {
+  background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  padding: 1rem;
+}
+
+.project-card:hover, .skill-card:hover {
+  transform: translateY(-5px);
 }
 
 .project-card img {
   width: 100%;
-  display: block;
-}
-
-.project-card .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card:hover .overlay {
-  opacity: 1;
+  border-radius: 10px 10px 0 0;
 }
 
 .skill-card img {
@@ -180,41 +143,6 @@ h2 {
   display: block;
   height: 100%;
   background: linear-gradient(90deg, #4A90E2, #50C9C3);
-}
-
-.cert-card img {
-  width: 80px;
-  margin-bottom: 0.5rem;
-}
-
-.blog-list article {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-.blog-list a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #4A90E2;
-  text-decoration: none;
-}
-
-.contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input, .contact-form textarea {
-  padding: 0.8rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-family: 'Poppins', sans-serif;
 }
 
 footer {

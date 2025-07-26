@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Héctor Macarrilla - Portfolio</title>
-  <meta name="description" content="Portfolio profesional de Héctor Macarrilla con proyectos, certificaciones y blog.">
+  <meta name="description" content="Portfolio de Héctor Macarrilla, desarrollador de aplicaciones multiplataforma.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -16,52 +16,45 @@
     <div class="nav-container">
       <a href="#inicio" class="nav-logo">Héctor</a>
       <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#certificaciones">Certificaciones</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+        <li><a href="#habilidades" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
+        <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
       </ul>
-      <button id="dark-mode-toggle">🌙</button>
+      <div class="nav-buttons">
+        <button id="lang-toggle" title="Cambiar idioma">🌐</button>
+        <button id="dark-mode-toggle" title="Modo oscuro">🌙</button>
+      </div>
     </div>
   </nav>
 
   <header class="hero" id="inicio" data-aos="fade-up">
     <div class="container">
-      <h1>Héctor Macarrilla</h1>
-      <p>Desarrollador de Aplicaciones Multiplataforma</p>
-      <a href="#proyectos" class="btn">Ver Proyectos</a>
-      <a href="cv.pdf" class="btn btn-secondary" download>Descargar CV</a>
+      <h1 data-es="Héctor Macarrilla" data-en="Héctor Macarrilla">Héctor Macarrilla</h1>
+      <p data-es="Desarrollador de Aplicaciones Multiplataforma" data-en="Multiplatform Application Developer">Desarrollador de Aplicaciones Multiplataforma</p>
+      <a href="#proyectos" class="btn" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
+      <a href="cv.pdf" class="btn btn-secondary" download data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
     </div>
   </header>
 
   <section id="proyectos" data-aos="fade-up">
-    <h2>Proyectos</h2>
+    <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
     <div class="projects">
       <div class="project-card">
         <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
-        <div class="overlay">
-          <h3>Proyecto 1</h3>
-          <p>Descripción breve del proyecto 1.</p>
-          <a href="#" class="btn">Ver Demo</a>
-          <a href="#" class="btn btn-secondary">Ver Código</a>
-        </div>
+        <h3 data-es="Proyecto 1" data-en="Project 1">Proyecto 1</h3>
+        <p data-es="Descripción breve del proyecto 1." data-en="Short description of project 1.">Descripción breve del proyecto 1.</p>
       </div>
       <div class="project-card">
         <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
-        <div class="overlay">
-          <h3>Proyecto 2</h3>
-          <p>Descripción breve del proyecto 2.</p>
-          <a href="#" class="btn">Ver Demo</a>
-          <a href="#" class="btn btn-secondary">Ver Código</a>
-        </div>
+        <h3 data-es="Proyecto 2" data-en="Project 2">Proyecto 2</h3>
+        <p data-es="Descripción breve del proyecto 2." data-en="Short description of project 2.">Descripción breve del proyecto 2.</p>
       </div>
     </div>
   </section>
 
   <section id="habilidades" data-aos="fade-up">
-    <h2>Habilidades</h2>
+    <h2 data-es="Habilidades" data-en="Skills">Habilidades</h2>
     <div class="skills">
       <div class="skill-card">
         <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Flutter">
@@ -81,43 +74,16 @@
     </div>
   </section>
 
-  <section id="certificaciones" data-aos="fade-up">
-    <h2>Certificaciones</h2>
-    <div class="certifications">
-      <div class="cert-card">
-        <img src="https://via.placeholder.com/100" alt="Certificado 1">
-        <p>Certificado en Desarrollo Web Avanzado</p>
-      </div>
-      <div class="cert-card">
-        <img src="https://via.placeholder.com/100" alt="Certificado 2">
-        <p>Flutter & Dart Mastery</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="blog" data-aos="fade-up">
-    <h2>Blog</h2>
-    <div class="blog-list">
-      <article>
-        <h3>Cómo optimizar aplicaciones móviles</h3>
-        <p>Un breve resumen de técnicas para mejorar el rendimiento de apps multiplataforma.</p>
-        <a href="#">Leer más</a>
-      </article>
-      <article>
-        <h3>Tendencias en desarrollo multiplataforma</h3>
-        <p>Exploramos las tecnologías que dominarán el mercado en los próximos años.</p>
-        <a href="#">Leer más</a>
-      </article>
-    </div>
-  </section>
-
-  <section id="contacto" data-aos="fade-up">
-    <h2>Contacto</h2>
-    <form class="contact-form" action="https://formspree.io/f/{your-id}" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu email" required>
-      <textarea name="message" placeholder="Escribe tu mensaje" required></textarea>
-      <button type="submit" class="btn">Enviar</button>
+  <section id="contacto" style="background: linear-gradient(135deg, #4A90E2, #50C9C3); color: white; padding: 4rem 10%;" data-aos="fade-up">
+    <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+    <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;" data-es="¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte." data-en="Do you have an idea or project in mind? I'd be delighted to hear from you.">
+      ¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte.
+    </p>
+    <form action="https://formspree.io/f/{your-id}" method="POST" style="max-width: 500px; margin: 2rem auto 0; display: flex; flex-direction: column; gap: 1rem;">
+      <input type="text" name="name" placeholder="Tu nombre" data-es="Tu nombre" data-en="Your name" required>
+      <input type="email" name="email" placeholder="Tu email" data-es="Tu email" data-en="Your email" required>
+      <textarea name="message" placeholder="Tu mensaje" data-es="Tu mensaje" data-en="Your message" rows="5" required></textarea>
+      <button type="submit" class="btn" style="background: white; color: #4A90E2;" data-es="Enviar mensaje" data-en="Send Message">Enviar mensaje</button>
     </form>
   </section>
 
@@ -131,8 +97,24 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+    // Dark mode toggle
     document.getElementById('dark-mode-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+    });
+
+    // Language toggle
+    const langToggle = document.getElementById('lang-toggle');
+    langToggle.addEventListener('click', () => {
+      const currentLang = document.documentElement.lang;
+      document.querySelectorAll('[data-es]').forEach(el => {
+        el.innerText = (currentLang === 'es') ? el.getAttribute('data-en') : el.getAttribute('data-es');
+      });
+      document.querySelectorAll('input, textarea').forEach(el => {
+        if (el.hasAttribute('data-es') && el.hasAttribute('data-en')) {
+          el.placeholder = (currentLang === 'es') ? el.getAttribute('data-en') : el.getAttribute('data-es');
+        }
+      });
+      document.documentElement.lang = (currentLang === 'es') ? 'en' : 'es';
     });
   </script>
 </body>
