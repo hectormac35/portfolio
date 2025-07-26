@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Héctor Macarrilla - Portfolio ULTRA PRO</title>
-  <meta name="description" content="Portfolio de Héctor Macarrilla con animaciones, filtros de proyectos y PWA.">
+  <title>Héctor Macarrilla - Portfolio</title>
+  <meta name="description" content="Portfolio de Héctor Macarrilla, desarrollador de aplicaciones multiplataforma.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -19,90 +19,86 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#logros">Logros</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button id="dark-mode-toggle">🌙</button>
     </div>
   </nav>
 
-  <header class="hero" id="inicio">
+  <header class="hero" id="inicio" data-aos="fade-up">
     <div class="container">
-      <h1>Héctor Macarrilla</h1>
-      <p>Desarrollador de Aplicaciones Multiplataforma</p>
-      <div class="stats">
-        <div class="stat"><span class="count" data-count="5">0</span><p>Años de Experiencia</p></div>
-        <div class="stat"><span class="count" data-count="20">0</span><p>Proyectos Completados</p></div>
-        <div class="stat"><span class="count" data-count="10">0</span><p>Clientes Satisfechos</p></div>
-      </div>
-      <a href="#proyectos" class="btn">Ver Proyectos</a>
-      <a href="cv.pdf" class="btn btn-secondary" download>Descargar CV</a>
+      <h1 class="fade-in">Héctor Macarrilla</h1>
+      <p class="fade-in delay">Desarrollador de Aplicaciones Multiplataforma</p>
+      <a href="#proyectos" class="btn fade-in delay2">Ver Proyectos</a>
+      <a href="cv.pdf" class="btn btn-secondary fade-in delay2" download>Descargar CV</a>
     </div>
   </header>
 
-  <section id="proyectos">
+  <section id="proyectos" data-aos="fade-up">
     <h2>Proyectos</h2>
-    <div class="filter-buttons">
-      <button data-filter="all" class="active">Todos</button>
-      <button data-filter="web">Web</button>
-      <button data-filter="movil">Móvil</button>
-    </div>
     <div class="projects">
-      <div class="project-card web">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto Web 1">
-        <h3>Proyecto Web 1</h3>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
+        <div class="overlay">
+          <h3>Proyecto 1</h3>
+          <p>Descripción breve del proyecto 1.</p>
+          <a href="#" class="btn">Ver Demo</a>
+          <a href="#" class="btn btn-secondary">Ver Código</a>
+        </div>
       </div>
-      <div class="project-card movil">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto Móvil 1">
-        <h3>Proyecto Móvil 1</h3>
-      </div>
-      <div class="project-card web">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto Web 2">
-        <h3>Proyecto Web 2</h3>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
+        <div class="overlay">
+          <h3>Proyecto 2</h3>
+          <p>Descripción breve del proyecto 2.</p>
+          <a href="#" class="btn">Ver Demo</a>
+          <a href="#" class="btn btn-secondary">Ver Código</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="habilidades">
+  <section id="sobre-mi" data-aos="fade-up">
+    <h2>Sobre Mí</h2>
+    <p>
+      Me apasiona entender cómo las personas interactúan con la tecnología y convertir esas ideas en aplicaciones intuitivas y funcionales. Busco que cada proyecto aporte valor y ofrezca una experiencia única.
+    </p>
+  </section>
+
+  <section id="habilidades" data-aos="fade-up">
     <h2>Habilidades</h2>
     <div class="skills">
       <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Flutter">
         <h3>Flutter</h3>
         <div class="progress"><span style="width: 80%;"></span></div>
       </div>
       <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React Native">
         <h3>React Native</h3>
         <div class="progress"><span style="width: 70%;"></span></div>
       </div>
       <div class="skill-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt=".NET MAUI">
         <h3>.NET MAUI</h3>
         <div class="progress"><span style="width: 65%;"></span></div>
       </div>
     </div>
   </section>
 
-  <section id="experiencia">
-    <h2>Experiencia</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span>2023</span>
-        <p>Desarrollo de aplicación multiplataforma para empresa X.</p>
-      </div>
-      <div class="timeline-item">
-        <span>2022</span>
-        <p>Proyecto freelance: aplicación de gestión deportiva.</p>
-      </div>
+  <section id="logros" data-aos="fade-up">
+    <h2>Logros y Testimonios</h2>
+    <div class="testimonials">
+      <blockquote>"Héctor destaca por su dedicación y calidad en cada proyecto." – Cliente A</blockquote>
+      <blockquote>"Un desarrollador innovador y confiable." – Compañero de equipo</blockquote>
     </div>
   </section>
 
-  <section id="contacto">
+  <section id="contacto" data-aos="fade-up">
     <h2>Contacto</h2>
-    <form class="contact-form" action="https://formspree.io/f/{your-id}" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu email" required>
-      <textarea name="message" placeholder="Escribe tu mensaje" required></textarea>
-      <button type="submit" class="btn">Enviar</button>
-    </form>
+    <p>Si quieres colaborar o saber más sobre mi trabajo, ¡hablemos!</p>
+    <a href="mailto:hectormacarrilla@gmail.com" class="btn">Enviar Email</a>
   </section>
 
   <footer>
@@ -115,38 +111,17 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    // Contadores
-    document.querySelectorAll('.count').forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText;
-        const increment = target / 100;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 40);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCount();
-    });
-
-    // Filtros de proyectos
-    const filterButtons = document.querySelectorAll('.filter-buttons button');
-    const projects = document.querySelectorAll('.project-card');
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelector('.filter-buttons .active').classList.remove('active');
-        button.classList.add('active');
-        const filter = button.getAttribute('data-filter');
-        projects.forEach(project => {
-          project.style.display = (filter === 'all' || project.classList.contains(filter)) ? 'block' : 'none';
-        });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
+    });
+
+    // Dark mode toggle
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
     });
   </script>
 </body>
