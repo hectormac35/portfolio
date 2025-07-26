@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Héctor Macarrilla - Portfolio</title>
-  <meta name="description" content="Portfolio de Héctor Macarrilla, desarrollador de aplicaciones multiplataforma.">
+  <meta name="description" content="Portfolio profesional de Héctor Macarrilla con proyectos, certificaciones y blog.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -19,7 +19,8 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#logros">Logros</a></li>
+        <li><a href="#certificaciones">Certificaciones</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button id="dark-mode-toggle">🌙</button>
@@ -28,10 +29,10 @@
 
   <header class="hero" id="inicio" data-aos="fade-up">
     <div class="container">
-      <h1 class="fade-in">Héctor Macarrilla</h1>
-      <p class="fade-in delay">Desarrollador de Aplicaciones Multiplataforma</p>
-      <a href="#proyectos" class="btn fade-in delay2">Ver Proyectos</a>
-      <a href="cv.pdf" class="btn btn-secondary fade-in delay2" download>Descargar CV</a>
+      <h1>Héctor Macarrilla</h1>
+      <p>Desarrollador de Aplicaciones Multiplataforma</p>
+      <a href="#proyectos" class="btn">Ver Proyectos</a>
+      <a href="cv.pdf" class="btn btn-secondary" download>Descargar CV</a>
     </div>
   </header>
 
@@ -59,13 +60,6 @@
     </div>
   </section>
 
-  <section id="sobre-mi" data-aos="fade-up">
-    <h2>Sobre Mí</h2>
-    <p>
-      Me apasiona entender cómo las personas interactúan con la tecnología y convertir esas ideas en aplicaciones intuitivas y funcionales. Busco que cada proyecto aporte valor y ofrezca una experiencia única.
-    </p>
-  </section>
-
   <section id="habilidades" data-aos="fade-up">
     <h2>Habilidades</h2>
     <div class="skills">
@@ -87,18 +81,44 @@
     </div>
   </section>
 
-  <section id="logros" data-aos="fade-up">
-    <h2>Logros y Testimonios</h2>
-    <div class="testimonials">
-      <blockquote>"Héctor destaca por su dedicación y calidad en cada proyecto." – Cliente A</blockquote>
-      <blockquote>"Un desarrollador innovador y confiable." – Compañero de equipo</blockquote>
+  <section id="certificaciones" data-aos="fade-up">
+    <h2>Certificaciones</h2>
+    <div class="certifications">
+      <div class="cert-card">
+        <img src="https://via.placeholder.com/100" alt="Certificado 1">
+        <p>Certificado en Desarrollo Web Avanzado</p>
+      </div>
+      <div class="cert-card">
+        <img src="https://via.placeholder.com/100" alt="Certificado 2">
+        <p>Flutter & Dart Mastery</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" data-aos="fade-up">
+    <h2>Blog</h2>
+    <div class="blog-list">
+      <article>
+        <h3>Cómo optimizar aplicaciones móviles</h3>
+        <p>Un breve resumen de técnicas para mejorar el rendimiento de apps multiplataforma.</p>
+        <a href="#">Leer más</a>
+      </article>
+      <article>
+        <h3>Tendencias en desarrollo multiplataforma</h3>
+        <p>Exploramos las tecnologías que dominarán el mercado en los próximos años.</p>
+        <a href="#">Leer más</a>
+      </article>
     </div>
   </section>
 
   <section id="contacto" data-aos="fade-up">
     <h2>Contacto</h2>
-    <p>Si quieres colaborar o saber más sobre mi trabajo, ¡hablemos!</p>
-    <a href="mailto:hectormacarrilla@gmail.com" class="btn">Enviar Email</a>
+    <form class="contact-form" action="https://formspree.io/f/{your-id}" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu email" required>
+      <textarea name="message" placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
   </section>
 
   <footer>
@@ -111,16 +131,7 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Dark mode toggle
-    const toggle = document.getElementById('dark-mode-toggle');
-    toggle.addEventListener('click', () => {
+    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
   </script>
