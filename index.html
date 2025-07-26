@@ -30,8 +30,9 @@
 
   <header class="hero" id="inicio" data-aos="fade-up">
     <div class="container">
-      <h1 data-es="Héctor Macarrilla" data-en="Héctor Macarrilla">Héctor Macarrilla</h1>
+      <h1 data-es="Héctor Macarrilla Maluenda" data-en="Héctor Macarrilla Maluenda">Héctor Macarrilla Maluenda</h1>
       <p data-es="Desarrollador de Aplicaciones Multiplataforma" data-en="Multiplatform Application Developer">Desarrollador de Aplicaciones Multiplataforma</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Coding Icon" class="coding-icon">
       <a href="#proyectos" class="btn" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
       <a href="cv.pdf" class="btn btn-secondary" download data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
     </div>
@@ -74,16 +75,22 @@
     </div>
   </section>
 
-  <section id="contacto" style="background: linear-gradient(135deg, #4A90E2, #50C9C3); color: white; padding: 4rem 10%;" data-aos="fade-up">
+  <section id="contacto" class="contact-section" data-aos="fade-up">
     <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-    <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;" data-es="¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte." data-en="Do you have an idea or project in mind? I'd be delighted to hear from you.">
+    <p class="contact-intro" data-es="¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte." data-en="Do you have an idea or project in mind? I'd be delighted to hear from you.">
       ¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte.
     </p>
-    <form action="https://formspree.io/f/{your-id}" method="POST" style="max-width: 500px; margin: 2rem auto 0; display: flex; flex-direction: column; gap: 1rem;">
-      <input type="text" name="name" placeholder="Tu nombre" data-es="Tu nombre" data-en="Your name" required>
-      <input type="email" name="email" placeholder="Tu email" data-es="Tu email" data-en="Your email" required>
-      <textarea name="message" placeholder="Tu mensaje" data-es="Tu mensaje" data-en="Your message" rows="5" required></textarea>
-      <button type="submit" class="btn" style="background: white; color: #4A90E2;" data-es="Enviar mensaje" data-en="Send Message">Enviar mensaje</button>
+    <form action="https://formspree.io/f/{your-id}" method="POST" class="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Tu nombre" data-es="Tu nombre" data-en="Your name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Tu email" data-es="Tu email" data-en="Your email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Tu mensaje" data-es="Tu mensaje" data-en="Your message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn" data-es="Enviar mensaje" data-en="Send Message">Enviar mensaje</button>
     </form>
   </section>
 
@@ -97,12 +104,9 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-    // Dark mode toggle
     document.getElementById('dark-mode-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
-
-    // Language toggle
     const langToggle = document.getElementById('lang-toggle');
     langToggle.addEventListener('click', () => {
       const currentLang = document.documentElement.lang;
