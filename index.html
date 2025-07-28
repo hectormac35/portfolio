@@ -15,7 +15,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#inicio" class="nav-logo">Héctor</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
         <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
         <li><a href="#habilidades" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
@@ -24,6 +24,7 @@
       <div class="nav-buttons">
         <button id="lang-toggle" title="Cambiar idioma">🌐</button>
         <button id="dark-mode-toggle" title="Modo oscuro">🌙</button>
+        <button class="hamburger" id="hamburger" aria-label="Menú móvil">☰</button>
       </div>
     </div>
   </nav>
@@ -42,12 +43,24 @@
     <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
     <div class="projects">
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
+        <div class="project-img-container">
+          <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
+          <div class="overlay">
+            <a href="#" class="project-btn">Ver Demo</a>
+            <a href="#" class="project-btn">Ver Código</a>
+          </div>
+        </div>
         <h3 data-es="Proyecto 1" data-en="Project 1">Proyecto 1</h3>
         <p data-es="Descripción breve del proyecto 1." data-en="Short description of project 1.">Descripción breve del proyecto 1.</p>
       </div>
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
+        <div class="project-img-container">
+          <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
+          <div class="overlay">
+            <a href="#" class="project-btn">Ver Demo</a>
+            <a href="#" class="project-btn">Ver Código</a>
+          </div>
+        </div>
         <h3 data-es="Proyecto 2" data-en="Project 2">Proyecto 2</h3>
         <p data-es="Descripción breve del proyecto 2." data-en="Short description of project 2.">Descripción breve del proyecto 2.</p>
       </div>
@@ -107,6 +120,7 @@
     document.getElementById('dark-mode-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
+
     const langToggle = document.getElementById('lang-toggle');
     langToggle.addEventListener('click', () => {
       const currentLang = document.documentElement.lang;
@@ -119,6 +133,13 @@
         }
       });
       document.documentElement.lang = (currentLang === 'es') ? 'en' : 'es';
+    });
+
+    // Menú hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
