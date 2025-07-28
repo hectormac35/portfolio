@@ -210,7 +210,12 @@ h2 {
 }
 
 /* Footer */
+
 footer {
+  background: #2563EB;
+  text-align: center;
+  padding: 1.5rem;
+
   background: linear-gradient(90deg, #2563EB, #1e40af);
   color: white;
   padding: 1rem;
@@ -241,5 +246,161 @@ footer {
 
   .coding-icon {
     width: 80px;
+  }
+}
+
+.dark-mode .project-card h3,
+.dark-mode .project-card p,
+.dark-mode .cert-card h3,
+.dark-mode .cert-card p {
+  color: #000;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.language-toggle svg {
+  fill: #FFD700; /* Dorado para resaltar */
+  width: 22px;
+  height: 22px;
+}
+
+#particles {
+  opacity: 0.15; /* más sutil */
+}
+
+/* Footer profesional */
+footer {
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 2rem 10%;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.footer-right a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #60a5fa;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+/* --- Menú hamburguesa --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #2563EB;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    margin-bottom: 1rem;
+  }
+}
+
+/* --- Ajustes responsive móvil --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .btn, .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  section {
+    padding: 2rem 5%;
+  }
+  .skills img {
+    width: 40px;
+    height: 40px;
+  }
+  .projects, .skills, .certifications {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .contact-section input, .contact-section textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    margin-top: 1rem;
   }
 }

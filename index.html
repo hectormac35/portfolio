@@ -139,14 +139,24 @@
         <path d="M0,0 C300,100 900,0 1200,100 L1200,00 L0,0 Z"></path>
       </svg>
     </div>
-    <footer>
-    <p>© 2025 Héctor Macarrilla |
-       <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank">LinkedIn</a> |
-       <a href="https://github.com/hectormac35" target="_blank">GitHub</a>
-    </p>
-  
-    <button id="toTop" title="Ir arriba">↑</button>
-    </footer>
+    
+<footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Héctor Macarrilla</h3>
+      <p>Desarrollador de Aplicaciones Multiplataforma</p>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/hectormac35" target="_blank">GitHub</a>
+      <a href="mailto:hectormacarrilla@gmail.com">Email</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Héctor Macarrilla - Todos los derechos reservados</p>
+  </div>
+</footer>
+
     
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -271,6 +281,16 @@
 
   initParticles();
   animateParticles();
+</script>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
 </script>
 
 </body>
