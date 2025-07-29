@@ -34,7 +34,7 @@
     </div>
   </nav>
 
-  <header class="hero" id="hero-section parallax" id="inicio" data-aos="fade-up">
+  <header class="hero parallax" id="inicio" data-aos="fade-up">
     <canvas id="particles"></canvas>
     <div class="container">
       <h1 class="name-anim" data-es="Héctor Macarrilla Maluenda" data-en="Héctor Macarrilla Maluenda">Héctor Macarrilla Maluenda</h1>
@@ -268,6 +268,17 @@
   initParticles();
   animateParticles();
 </script>
+
+<script>
+  document.querySelector('a[href="#inicio"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
 
 </body>
 </html>
