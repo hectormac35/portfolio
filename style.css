@@ -39,25 +39,9 @@ p {
   transform-origin: left;
 }
 
-.nav-logo {
-  text-decoration: none !important;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: white;
-}
-
-/* Footer degradado animado */
-.footer-gradient {
-  background: linear-gradient(270deg, #2563EB, #1e40af, #2563EB);
-  background-size: 600% 600%;
-  animation: gradientShift 15s ease infinite;
+.footer-simple {
+  background: #1e293b;
   text-align: center;
   color: white;
   padding: 1rem;
-}
-
-@keyframes gradientShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
 }

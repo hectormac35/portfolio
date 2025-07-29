@@ -140,7 +140,7 @@
       </svg>
     </div>
     
-<footer class="footer-gradient">
+<footer class="footer-simple">
   <div class="footer-content">
     <p>© 2025 Héctor Macarrilla |
        <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank">LinkedIn</a> |
@@ -273,6 +273,14 @@
 
   initParticles();
   animateParticles();
+</script>
+
+
+<script>
+  document.getElementById('homeLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
 </script>
 
 </body>
