@@ -12,6 +12,17 @@ p {
   font-size: 1rem;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(37, 99, 235, 0.7); /* Color azul con transparencia */
+  backdrop-filter: blur(10px);        /* Aplica efecto blur */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
 /* --- Mejoras de modo oscuro --- */
 .dark-mode {
   background-color: #0d1117; /* Fondo oscuro tipo GitHub */
@@ -19,7 +30,8 @@ p {
 }
 
 .dark-mode .navbar {
-  background: linear-gradient(90deg, #1f2937, #374151);
+  background: rgba(17, 23, 35, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .dark-mode .nav-links a {
