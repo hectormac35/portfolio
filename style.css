@@ -75,6 +75,27 @@ p {
   transform-origin: left;
 }
 
+/* Estilo para el botón hamburguesa */
+.hamburger {
+  font-size: 1.8rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Modo oscuro para el botón hamburguesa */
+.dark-mode .hamburger {
+  color: #e6edf3; /* Color claro para contraste */
+}
+
+/* Transparencia en modo oscuro para menú hamburguesa desplegado */
+.dark-mode .nav-links {
+  background: rgba(17, 23, 35, 0.8);
+  backdrop-filter: blur(10px);
+}
+
 /* --- Logo personalizado --- */
 .nav-logo img {
   height: 200px;  /* Ajusta el tamaño del logo */
