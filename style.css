@@ -9,10 +9,30 @@ p {
 }
 
 /* --- Mejoras de modo oscuro --- */
-.dark-mode body, .dark-mode .navbar, .dark-mode .hero, .dark-mode .contact-section, .dark-mode footer {
-  color: #f8f9fa;
+.dark-mode {
+  background-color: #0d1117; /* Fondo oscuro tipo GitHub */
+  color: #e6edf3;
 }
-.dark-mode .btn, .dark-mode .project-btn {
+
+.dark-mode .navbar {
+  background: linear-gradient(90deg, #1f2937, #374151);
+}
+
+.dark-mode .nav-links a {
+  color: #e6edf3;
+}
+
+.dark-mode .hero,
+.dark-mode .contact-section {
+  background: linear-gradient(135deg, #1f2937, #374151);
+}
+
+.dark-mode footer {
+  background: linear-gradient(90deg, #1f2937, #111827);
+}
+
+.dark-mode .btn,
+.dark-mode .project-btn {
   background: linear-gradient(90deg, #60A5FA, #2563EB);
   color: #fff;
 }
