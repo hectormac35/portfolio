@@ -20,7 +20,7 @@
   <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="nav-container">
       <a href="#inicio" class="nav-logo">
-        <img src="logo-hector-blanco.png" alt="Héctor Logo Blanco" style="height:200px;">
+        <img id="logo" src="logo-hector.png" alt="Héctor Logo" style="height: 100px;">
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
@@ -280,7 +280,17 @@
     });
   });
 </script>
-
+<script>
+  const logo = document.getElementById('logo');
+  document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      logo.src = 'logo-hector-blanco.png';
+    } else {
+      logo.src = 'logo-hector.png';
+    }
+  });
+</script>
 
 </body>
 </html>
