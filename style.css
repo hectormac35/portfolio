@@ -75,3 +75,32 @@ p {
   vertical-align: middle;
   display: inline-block;
 }
+/* Ajustes de contraste para modo oscuro */
+.dark-mode section {
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: #f5f5f5; /* Texto claro */
+}
+
+.dark-mode .project-card,
+.dark-mode .skill-card,
+.dark-mode .cert-card {
+  background-color: #2a2a2a; /* Tarjetas más oscuras */
+  color: #f5f5f5; /* Texto claro */
+}
+
+.dark-mode h2, 
+.dark-mode h3 {
+  color: #60A5FA; /* Azul claro para títulos */
+}
+
+.dark-mode .project-btn {
+  background: #60A5FA;
+  color: #fff;
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: #333;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
