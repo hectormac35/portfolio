@@ -158,9 +158,6 @@
       setTimeout(() => loader.style.display = "none", 500);
     });
 
-    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
 
     const langToggle = document.getElementById('lang-toggle');
     langToggle.addEventListener('click', () => {
@@ -280,15 +277,14 @@
     });
   });
 </script>
+  
 <script>
   const logo = document.getElementById('logo');
   document.getElementById('dark-mode-toggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-      logo.src = 'logo-hector-blanco.png';
-    } else {
-      logo.src = 'logo-hector.png';
-    }
+    logo.src = document.body.classList.contains('dark-mode') 
+      ? 'logo-hector-blanco.png' 
+      : 'logo-hector.png';
   });
 </script>
 
