@@ -41,7 +41,7 @@ p {
 
 /* --- Logo personalizado --- */
 .nav-logo img {
-  height: 400px;  /* Ajusta el tamaño del logo */
+  height: 200px;  /* Ajusta el tamaño del logo */
   width: auto;
   display: block;
 }
@@ -51,7 +51,7 @@ p {
 }
 /* Ajuste para el logo en la navbar */
 .nav-logo img {
-  height: 400px;         /* Tamaño del logo */
+  height: 200px;         /* Tamaño del logo */
   vertical-align: middle;
   display: inline-block;
 }
