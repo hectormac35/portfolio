@@ -38,10 +38,3 @@ p {
   transform: scaleX(1);
   transform-origin: left;
 }
-
-.footer-clean {
-  background: #1e293b;
-  text-align: center;
-  color: white;
-  padding: 1rem;
-}
