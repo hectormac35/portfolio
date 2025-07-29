@@ -49,3 +49,9 @@ p {
 .nav-logo {
   text-decoration: none; /* Elimina cualquier subrayado */
 }
+/* Ajuste para el logo en la navbar */
+.nav-logo img {
+  height: 400px;         /* Tamaño del logo */
+  vertical-align: middle;
+  display: inline-block;
+}
