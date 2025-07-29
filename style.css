@@ -38,3 +38,14 @@ p {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* --- Logo personalizado --- */
+.nav-logo img {
+  height: 40px;  /* Ajusta el tamaño del logo */
+  width: auto;
+  display: block;
+}
+
+.nav-logo {
+  text-decoration: none; /* Elimina cualquier subrayado */
+}
