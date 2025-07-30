@@ -75,6 +75,17 @@ p {
   transform-origin: left;
 }
 
+/* Transparencia en menú hamburguesa (modo normal) */
+.nav-links {
+  background: rgba(37, 99, 235, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* Forzar color del nombre */
+.name-anim {
+  color: #fff; /* Forzar que sea visible */
+}
+
 /* Estilo para el botón hamburguesa */
 .hamburger {
   font-size: 1.8rem;
