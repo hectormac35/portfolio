@@ -181,3 +181,9 @@ p {
 .dark-mode .hero h1.name-anim {
   color: #e6edf3; /* Color claro para modo oscuro */
 }
+
+.name-anim {
+  opacity: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 0 5px #2563EB, 0 0 10px #60A5FA !important;
+}
