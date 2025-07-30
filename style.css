@@ -75,6 +75,11 @@ p {
   transform-origin: left;
 }
 
+.nav-links a:hover {
+  background: none;
+  color: #38BDF8;
+}
+
 /* Transparencia en menú hamburguesa (modo normal) */
 .nav-links {
   background: rgba(37, 99, 235, 0.8);
