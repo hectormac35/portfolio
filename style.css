@@ -58,6 +58,21 @@ p {
   position: relative;
   padding-bottom: 2px;
 }
+
+.nav-links a {
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #38BDF8;
+  background: transparent;
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -75,10 +90,6 @@ p {
   transform-origin: left;
 }
 
-.nav-links a:hover {
-  background: none;
-  color: #38BDF8;
-}
 
 /* Transparencia en menú hamburguesa (modo normal) */
 .nav-links {
