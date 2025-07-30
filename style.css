@@ -108,7 +108,7 @@ p {
 }
 
 .nav-logo img {
-  height: 120px;        /* Puedes ajustar el tamaño aquí */
+  height: 200px;        /* Puedes ajustar el tamaño aquí */
   width: auto;          /* Mantiene proporciones */
   display: block;       /* Evita espacios innecesarios */
   object-fit: contain;  /* Se adapta al contenedor sin deformarse */
