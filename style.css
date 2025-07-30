@@ -174,3 +174,10 @@ p {
 .dark-mode .name-anim {
   text-shadow: 0 0 5px #60A5FA, 0 0 15px #2563EB;
 }
+.hero h1.name-anim {
+  color: #fff; /* Asegura que el texto sea blanco en cualquier modo */
+}
+
+.dark-mode .hero h1.name-anim {
+  color: #e6edf3; /* Color claro para modo oscuro */
+}
