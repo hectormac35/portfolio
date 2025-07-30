@@ -107,21 +107,19 @@ p {
   backdrop-filter: blur(10px);
 }
 
-/* --- Logo personalizado --- */
 .nav-logo img {
-  height: 200px;  /* Ajusta el tamaño del logo */
-  width: auto;
-  display: block;
+  height: 120px;        /* Puedes ajustar el tamaño aquí */
+  width: auto;          /* Mantiene proporciones */
+  display: block;       /* Evita espacios innecesarios */
+  object-fit: contain;  /* Se adapta al contenedor sin deformarse */
+  margin: 0;
+  padding: 0;
 }
 
 .nav-logo {
   text-decoration: none; /* Elimina cualquier subrayado */
 }
-/* Ajuste para el logo en la navbar */
-.nav-logo img {
-  height: 200px;         /* Tamaño del logo */
-  vertical-align: middle;
-  display: inline-block;
+
 }
 /* Ajustes de contraste para modo oscuro */
 .dark-mode section {
