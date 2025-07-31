@@ -69,6 +69,10 @@ p {
   transition: color 0.3s ease;
 }
 
+.navbar .nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 .nav-links a:hover {
   color: #38BDF8;
   background-color: rgba(255, 255, 255, 0.05); /* translúcido */
