@@ -250,3 +250,15 @@ p {
     background: none !important;
   }
 }
+
+/* === FORZAR color de texto en menú - modo claro === */
+.nav-links a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active {
+  color: #38BDF8;
+}
