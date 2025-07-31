@@ -101,11 +101,25 @@ p {
 }
 
 
-/* Transparencia en menú hamburguesa (modo normal) */
+/* Sin fondo en escritorio */
 .nav-links {
-  background: rgba(37, 99, 235, 0.8);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: none;
 }
+
+/* En móvil, sí se muestra fondo */
+@media (max-width: 768px) {
+  .nav-links {
+    background: rgba(37, 99, 235, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+  }
+
+  .dark-mode .nav-links {
+    background: rgba(17, 23, 35, 0.8);
+  }
+}
+
 
 /* Forzar color del nombre */
 .name-anim {
