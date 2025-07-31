@@ -233,8 +233,7 @@ p {
   #logo,
   #lang-toggle,
   #dark-mode-toggle,
-  .hamburger,
-  #toTop {
+  .hamburger {
     background: none !important;
     box-shadow: none !important;
     outline: none !important;
@@ -250,6 +249,18 @@ p {
     background: none !important;
   }
 }
+  #toTop {
+    background: #3B82F6 !important; /* azul o el color que usabas antes */
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
 
 /* === FORZAR color de texto en menú - modo claro === */
 .nav-links a {
