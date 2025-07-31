@@ -107,6 +107,12 @@ p {
   backdrop-filter: none;
 }
 
+/* Modo oscuro en escritorio */
+.dark-mode .nav-links {
+  background: transparent;
+  backdrop-filter: none;
+}
+
 /* En móvil, sí se muestra fondo */
 @media (max-width: 768px) {
   .nav-links {
