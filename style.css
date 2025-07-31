@@ -68,9 +68,15 @@ p {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
   color: #38BDF8;
-  background: transparent;
+  background-color: rgba(255, 255, 255, 0.05); /* translúcido */
+  border-radius: 8px;
+}
+
+.dark-mode .nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-links a::after {
