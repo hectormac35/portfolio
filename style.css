@@ -69,18 +69,18 @@ p {
   transition: color 0.3s ease;
 }
 
-.navbar .nav-links li a:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-}
-
 .nav-links a:hover {
   color: #38BDF8;
-  background-color: rgba(255, 255, 255, 0.05); /* translúcido */
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
   border-radius: 8px;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .dark-mode .nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
 }
 
 .nav-links a::after {
