@@ -10,6 +10,7 @@
   <meta property="og:description" content="Proyectos en .NET, Python y Elixir; cloud con Azure, AWS, Docker y Kubernetes. Zaragoza o teletrabajo.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://hectormac35.github.io/portfolio/img/og.jpg">
+  <meta property="og:url" content="https://hectormac35.github.io/portfolio/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,7 +114,7 @@
           </p>
         </div>
         <ul class="facts reveal">
-          <li class="card fact"><strong>10</strong><span data-es="proyectos personales completos" data-en="complete personal projects">proyectos personales completos</span></li>
+          <li class="card fact"><strong>11</strong><span data-es="proyectos personales completos" data-en="complete personal projects">proyectos personales completos</span></li>
           <li class="card fact"><strong>420+</strong><span data-es="tests automáticos en mis proyectos" data-en="automated tests across my projects">tests automáticos en mis proyectos</span></li>
           <li class="card fact"><strong>3</strong><span data-es="certificaciones cloud (Azure y AWS)" data-en="cloud certifications (Azure &amp; AWS)">certificaciones cloud (Azure y AWS)</span></li>
           <li class="card fact"><strong>3</strong><span data-es="stacks de backend: .NET, Python y Elixir" data-en="backend stacks: .NET, Python &amp; Elixir">stacks de backend: .NET, Python y Elixir</span></li>
@@ -409,6 +410,43 @@
           <div class="project-actions">
             <a class="btn btn-sm" href="https://github.com/hectormac35/gitops-compose-controller" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
             <button class="btn btn-sm btn-outline" type="button" data-gallery="gitops" data-es="Ver imágenes" data-en="Images">Ver imágenes</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-alt reveal" data-cat="cloud backend">
+        <button class="project-media" type="button" data-gallery="vault" aria-label="Ver imágenes del proyecto Vault">
+          <img src="img/proyectos/vault-portada.webp" alt="Secretos que caducan solos: credenciales dinámicas con HashiCorp Vault" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 3 imágenes" data-en="View 3 images">Ver 3 imágenes</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker">DevSecOps · HashiCorp Vault · PostgreSQL</p>
+          <h3 data-es="Vault · credenciales dinámicas de base de datos" data-en="Vault · dynamic database credentials">Vault · credenciales dinámicas de base de datos</h3>
+          <p data-es="Una API en FastAPI que nunca conoce una contraseña fija: Vault le entrega usuarios de PostgreSQL temporales que caducan solos, se renuevan sin reiniciar la app y se pueden revocar al instante ante un incidente."
+             data-en="A FastAPI API that never knows a fixed password: Vault hands it temporary PostgreSQL users that expire on their own, rotate without restarting the app and can be revoked instantly during an incident.">
+            Una API en FastAPI que nunca conoce una contraseña fija: Vault le entrega usuarios de PostgreSQL temporales que caducan solos, se renuevan sin reiniciar la app y se pueden revocar al instante ante un incidente.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Database secrets engine + AppRole + Vault Agent</strong>: credenciales de 2 minutos como máximo, con solo SELECT e INSERT."
+                data-en="<strong>Database secrets engine + AppRole + Vault Agent</strong>: credentials that live 2 minutes at most, with only SELECT and INSERT."><strong>Database secrets engine + AppRole + Vault Agent</strong>: credenciales de 2 minutos como máximo, con solo SELECT e INSERT.</li>
+            <li data-es="<strong>Demo de incidente</strong>: se revocan todas las credenciales y la API se recupera sola en 15 s, sin reinicios."
+                data-en="<strong>Incident demo</strong>: all credentials are revoked and the API recovers on its own in 15 s, without restarts."><strong>Demo de incidente</strong>: se revocan todas las credenciales y la API se recupera sola en 15 s, sin reinicios.</li>
+            <li data-es="<strong>Aislamiento</strong>: la app no ve el secret_id ni tokens; Vault rota la contraseña del admin; PostgreSQL sin puertos expuestos."
+                data-en="<strong>Isolation</strong>: the app never sees the secret_id or tokens; Vault rotates the admin password; PostgreSQL exposes no ports."><strong>Aislamiento</strong>: la app no ve el secret_id ni tokens; Vault rota la contraseña del admin; PostgreSQL sin puertos expuestos.</li>
+            <li data-es="CI con pytest, ShellCheck y una prueba de extremo a extremo que levanta Vault y PostgreSQL reales."
+                data-en="CI with pytest, ShellCheck and an end-to-end test that spins up real Vault and PostgreSQL.">CI con pytest, ShellCheck y una prueba de extremo a extremo que levanta Vault y PostgreSQL reales.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>2 min</strong> <span data-es="por credencial" data-en="per credential">por credencial</span></span>
+            <span><strong>0</strong> <span data-es="contraseñas en el código" data-en="passwords in code">contraseñas en el código</span></span>
+            <span><strong>E2E</strong> CI</span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>HashiCorp Vault</li><li>PostgreSQL</li><li>FastAPI</li><li>Docker Compose</li><li>pytest</li><li>ShellCheck</li><li>GitHub Actions</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/vault-secrets-dinamicos" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="vault" data-es="Ver imágenes" data-en="Images">Ver imágenes</button>
           </div>
         </div>
       </article>

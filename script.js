@@ -140,6 +140,11 @@
       ['seguridad-prometheus-errores-datos', 'Respuestas 200 frente a 503 en /datos durante tres caídas de la base de datos', '200 vs 503 responses on /datos during three database outages'],
       ['seguridad-prometheus-fuerza-bruta', 'Logins fallidos por minuto durante los ataques de fuerza bruta', 'Failed logins per minute during the brute-force attacks']
     ],
+    vault: [
+      ['vault-demo', 'Salida real de la demo: se revocan las credenciales y la API recibe un usuario nuevo en 15 s', 'Real demo output: credentials are revoked and the API gets a new user in 15 s'],
+      ['vault-arquitectura', 'Quién ve qué: volúmenes separados para el agente y la app', 'Who sees what: separate volumes for the agent and the app'],
+      ['vault-ciclo', 'Vida de una credencial: emisión, renovación, caducidad y revocación', 'Life of a credential: issue, renewal, expiry and revocation']
+    ],
     gitops: [
       ['gitops-demo', 'make demo con Docker real: cambio por commit, deriva corregida y rollback con git revert', 'make demo with real Docker: change by commit, drift corrected and rollback with git revert'],
       ['gitops-arquitectura', 'Arquitectura: repo Git, controlador, Docker y API', 'Architecture: Git repo, controller, Docker and API'],
