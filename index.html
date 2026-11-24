@@ -1,293 +1,629 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Héctor Macarrilla - Portfolio</title>
-  <meta name="description" content="Portfolio de Héctor Macarrilla, desarrollador de aplicaciones multiplataforma.">
+  <title>Héctor Macarrilla · Desarrollador de software</title>
+  <meta name="description" content="Portfolio de Héctor Macarrilla Maluenda, desarrollador de software junior en Zaragoza. Proyectos en .NET, Python y Elixir con Docker, Kubernetes y Azure. Certificado en AZ-104 y AWS.">
+  <meta name="theme-color" content="#2563EB">
+  <meta property="og:title" content="Héctor Macarrilla · Desarrollador de software">
+  <meta property="og:description" content="Proyectos en .NET, Python y Elixir; cloud con Azure, AWS, Docker y Kubernetes. Zaragoza o teletrabajo.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://hectormac35.github.io/portfolio/img/og.jpg">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script>
+    // Aplica el tema guardado antes de pintar, para evitar el parpadeo
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if (t === 'dark') document.documentElement.classList.add('dark-mode');
+    })();
+  </script>
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+  <a class="skip-link" href="#proyectos" data-es="Saltar a proyectos" data-en="Skip to projects">Saltar a proyectos</a>
 
-  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <!-- ============ NAVEGACIÓN ============ -->
+  <nav class="navbar" aria-label="Navegación principal">
     <div class="nav-container">
-      <a href="#inicio" class="nav-logo">
-        <img id="logo" src="logo-hector.png" alt="Héctor Logo">
+      <a href="#inicio" class="nav-logo" aria-label="Inicio">
+        <img class="logo logo-light" src="img/logo-hector.png" alt="Héctor" width="440" height="117">
+        <img class="logo logo-dark" src="img/logo-hector-blanco.png" alt="" width="440" height="113" aria-hidden="true">
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
         <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+        <li><a href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
         <li><a href="#habilidades" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
-        <li><a href="#certificaciones" data-es="Certificaciones" data-en="Certifications">Certificaciones</a></li>
         <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
       </ul>
       <div class="nav-buttons">
-        <button id="lang-toggle" title="Cambiar idioma">🌐</button>
-        <button id="dark-mode-toggle" title="Modo oscuro">🌙</button>
-        <button class="hamburger" id="hamburger" aria-label="Menú móvil">☰</button>
+        <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Switch to English">EN</button>
+        <button id="dark-mode-toggle" class="icon-btn" type="button" aria-label="Cambiar modo claro u oscuro">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        </button>
+        <button class="icon-btn hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
       </div>
     </div>
   </nav>
 
-  <header class="hero parallax" id="inicio" data-aos="fade-up">
-    <canvas id="particles"></canvas>
-    <div class="container">
-      <h1 class="name-anim" data-es="Héctor Macarrilla Maluenda" data-en="Héctor Macarrilla Maluenda">Héctor Macarrilla Maluenda</h1>
-      <p data-es="Desarrollador de Aplicaciones Multiplataforma" data-en="Multiplatform Application Developer">Desarrollador de Aplicaciones Multiplataforma</p>
-      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Coding Icon" class="coding-icon">
-      <a href="#proyectos" class="btn" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
-      <a href="cv.pdf" class="btn btn-secondary" download data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="inicio">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-kicker">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-es="Disponible · Zaragoza o teletrabajo" data-en="Available · Zaragoza (Spain) or remote">Disponible · Zaragoza o teletrabajo</span>
+        </p>
+        <h1 class="name-anim">Héctor Macarrilla Maluenda</h1>
+        <p class="hero-role" data-es="Desarrollador de software junior · Backend, web y cloud" data-en="Junior software developer · Backend, web &amp; cloud">Desarrollador de software junior · Backend, web y cloud</p>
+        <p class="hero-sub" data-es="Me gusta trabajar en equipo: comunico con claridad, escucho, pido ayuda cuando la necesito y la ofrezco cuando otro la necesita. Soy <strong>constante, responsable y resolutivo</strong>, cumplo lo que me comprometo y aprendo rápido."
+           data-en="I enjoy working in a team: I communicate clearly, listen, ask for help when I need it and offer it when someone else does. I'm <strong>consistent, reliable and solution-oriented</strong>, I deliver on my commitments and I learn fast.">
+          Me gusta trabajar en equipo: comunico con claridad, escucho, pido ayuda cuando la necesito y la ofrezco cuando otro la necesita. Soy <strong>constante, responsable y resolutivo</strong>, cumplo lo que me comprometo y aprendo rápido.
+        </p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn" data-es="Ver proyectos" data-en="View projects">Ver proyectos</a>
+          <!-- Sube tu CV en PDF a la raíz del repo con el nombre cv.pdf -->
+          <a href="cv.pdf" class="btn btn-ghost" download data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/hectormac35" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="avatar-wrap">
+          <img class="avatar-img" src="img/avatar.webp" alt="Ilustración de Héctor" width="520" height="520">
+        </div>
+      </div>
     </div>
+    <a href="#sobre-mi" class="scroll-hint" aria-label="Bajar"><span></span></a>
   </header>
 
-  <section id="proyectos" role="region" aria-label="Proyectos" data-aos="fade-up">
-    <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
-    <div class="projects">
-      <div class="project-card scroll-reveal">
-        <div class="project-img-container">
-          <img loading="lazy" src="https://via.placeholder.com/400x250" alt="Proyecto 1">
-          <div class="overlay">
-            <a href="#" class="project-btn">Ver Demo</a>
-            <a href="#" class="project-btn">Ver Código</a>
-          </div>
+  <main>
+    <!-- ============ SOBRE MÍ ============ -->
+    <section id="sobre-mi" aria-labelledby="t-sobre">
+      <h2 id="t-sobre" class="reveal" data-es="Sobre mí" data-en="About me">Sobre mí</h2>
+      <div class="about-grid">
+        <div class="card about-text reveal">
+          <p data-es="Soy Técnico Superior en <strong>Desarrollo de Aplicaciones Multiplataforma</strong> y he trabajado como desarrollador de aplicaciones en CodeArts. Me gusta entender cómo funcionan las cosas por dentro y convertir un problema real en un producto útil, probado y fácil de mantener."
+             data-en="I hold a Higher Technical Diploma in <strong>Multiplatform Application Development</strong> and have worked as an application developer at CodeArts. I like understanding how things work under the hood and turning a real problem into a useful, tested, maintainable product.">
+            Soy Técnico Superior en <strong>Desarrollo de Aplicaciones Multiplataforma</strong> y he trabajado como desarrollador de aplicaciones en CodeArts. Me gusta entender cómo funcionan las cosas por dentro y convertir un problema real en un producto útil, probado y fácil de mantener.
+          </p>
+          <p data-es="He construido proyectos completos con <strong>.NET</strong>, <strong>Python</strong> y <strong>Elixir/Phoenix</strong>: microservicios con Kubernetes y RabbitMQ, infraestructura en Azure con Terraform, monitorización con Prometheus y Grafana, e integración de IA con modelos locales. En cloud tengo las certificaciones <strong>AZ-104</strong>, <strong>AWS Cloud Practitioner</strong> y <strong>AWS AI Practitioner</strong>."
+             data-en="I've built complete projects with <strong>.NET</strong>, <strong>Python</strong> and <strong>Elixir/Phoenix</strong>: microservices with Kubernetes and RabbitMQ, Azure infrastructure with Terraform, monitoring with Prometheus and Grafana, and AI integration with local models. On the cloud side I hold <strong>AZ-104</strong>, <strong>AWS Cloud Practitioner</strong> and <strong>AWS AI Practitioner</strong>.">
+            He construido proyectos completos con <strong>.NET</strong>, <strong>Python</strong> y <strong>Elixir/Phoenix</strong>: microservicios con Kubernetes y RabbitMQ, infraestructura en Azure con Terraform, monitorización con Prometheus y Grafana, e integración de IA con modelos locales. En cloud tengo las certificaciones <strong>AZ-104</strong>, <strong>AWS Cloud Practitioner</strong> y <strong>AWS AI Practitioner</strong>.
+          </p>
+          <p data-es="Busco un equipo donde aportar desde el primer día y seguir creciendo, en Zaragoza o en remoto."
+             data-en="I'm looking for a team where I can contribute from day one and keep growing, in Zaragoza or remotely.">
+            Busco un equipo donde aportar desde el primer día y seguir creciendo, en Zaragoza o en remoto.
+          </p>
         </div>
-        <h3 data-es="Proyecto 1" data-en="Project 1">Proyecto 1</h3>
-        <p data-es="Descripción breve del proyecto 1." data-en="Short description of project 1.">Descripción breve del proyecto 1.</p>
+        <ul class="facts reveal">
+          <li class="card fact"><strong>10</strong><span data-es="proyectos personales completos" data-en="complete personal projects">proyectos personales completos</span></li>
+          <li class="card fact"><strong>420+</strong><span data-es="tests automáticos en mis proyectos" data-en="automated tests across my projects">tests automáticos en mis proyectos</span></li>
+          <li class="card fact"><strong>3</strong><span data-es="certificaciones cloud (Azure y AWS)" data-en="cloud certifications (Azure &amp; AWS)">certificaciones cloud (Azure y AWS)</span></li>
+          <li class="card fact"><strong>3</strong><span data-es="stacks de backend: .NET, Python y Elixir" data-en="backend stacks: .NET, Python &amp; Elixir">stacks de backend: .NET, Python y Elixir</span></li>
+        </ul>
       </div>
-      <div class="project-card scroll-reveal">
-        <div class="project-img-container">
-          <img loading="lazy" src="https://via.placeholder.com/400x250" alt="Proyecto 2">
-          <div class="overlay">
-            <a href="#" class="project-btn">Ver Demo</a>
-            <a href="#" class="project-btn">Ver Código</a>
-          </div>
-        </div>
-        <h3 data-es="Proyecto 2" data-en="Project 2">Proyecto 2</h3>
-        <p data-es="Descripción breve del proyecto 2." data-en="Short description of project 2.">Descripción breve del proyecto 2.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  
-    <section id="certificaciones" data-aos="fade-up">
-      <h2 data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
-      <div class="certifications">
-        <div class="cert-card scroll-reveal">
-          <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Certificación 1">
-          <h3 data-es="Certificado 1" data-en="Certificate 1">Certificado 1</h3>
-          <p data-es="Descripción breve del certificado 1." data-en="Short description of certificate 1.">
-            Descripción breve del certificado 1.
+    <!-- ============ PROYECTOS ============ -->
+    <section id="proyectos" aria-labelledby="t-proy">
+      <h2 id="t-proy" class="reveal" data-es="Proyectos" data-en="Projects">Proyectos</h2>
+      <p class="section-intro reveal" data-es="Proyectos personales hechos de principio a fin: arquitectura, código, tests, contenedores, despliegue y documentación."
+         data-en="Personal projects built end to end: architecture, code, tests, containers, deployment and documentation.">
+        Proyectos personales hechos de principio a fin: arquitectura, código, tests, contenedores, despliegue y documentación.
+      </p>
+
+      <div class="filters reveal" role="group" aria-label="Filtrar proyectos">
+        <button type="button" class="filter active" data-filter="all" aria-pressed="true" data-es="Todos" data-en="All">Todos</button>
+        <button type="button" class="filter" data-filter="backend" aria-pressed="false">Backend</button>
+        <button type="button" class="filter" data-filter="cloud" aria-pressed="false" data-es="Cloud y DevOps" data-en="Cloud &amp; DevOps">Cloud y DevOps</button>
+        <button type="button" class="filter" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+        <button type="button" class="filter" data-filter="ia" aria-pressed="false" data-es="IA" data-en="AI">IA</button>
+      </div>
+
+      <!-- ===== Destacados ===== -->
+
+      <!-- NexusCommerce -->
+      <article class="project reveal" data-cat="backend cloud">
+        <button class="project-media" type="button" data-gallery="nexus" aria-label="Ver imágenes de NexusCommerce">
+          <img src="img/proyectos/nexus-portada.webp" alt="Diagrama de arquitectura de NexusCommerce" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 3 imágenes" data-en="View 3 images">Ver 3 imágenes</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker" data-es="Proyecto destacado · .NET · Microservicios" data-en="Featured project · .NET · Microservices">Proyecto destacado · .NET · Microservicios</p>
+          <h3 data-es="NexusCommerce · Plataforma de microservicios" data-en="NexusCommerce · Microservices platform">NexusCommerce · Plataforma de microservicios</h3>
+          <p data-es="Plataforma de comercio con microservicios independientes (identidad, catálogo, pedidos y notificaciones) detrás de un API Gateway, comunicados por eventos y desplegados en Kubernetes con trazabilidad de extremo a extremo."
+             data-en="Commerce platform made of independent microservices (identity, catalogue, orders and notifications) behind an API Gateway, communicating through events and deployed to Kubernetes with end-to-end tracing.">
+            Plataforma de comercio con microservicios independientes (identidad, catálogo, pedidos y notificaciones) detrás de un API Gateway, comunicados por eventos y desplegados en Kubernetes con trazabilidad de extremo a extremo.
           </p>
+          <ul class="highlights">
+            <li data-es="<strong>Clean Architecture + CQRS</strong> con MediatR y una base de datos PostgreSQL por servicio."
+                data-en="<strong>Clean Architecture + CQRS</strong> with MediatR and one PostgreSQL database per service."><strong>Clean Architecture + CQRS</strong> con MediatR y una base de datos PostgreSQL por servicio.</li>
+            <li data-es="<strong>RabbitMQ</strong> con <strong>Transactional Outbox</strong> para que ningún evento se pierda."
+                data-en="<strong>RabbitMQ</strong> with a <strong>Transactional Outbox</strong> so no event is ever lost."><strong>RabbitMQ</strong> con <strong>Transactional Outbox</strong> para que ningún evento se pierda.</li>
+            <li data-es="<strong>JWT con refresh tokens</strong> y roles sobre ASP.NET Core Identity; API Gateway con YARP."
+                data-en="<strong>JWT with refresh tokens</strong> and roles on ASP.NET Core Identity; YARP API Gateway."><strong>JWT con refresh tokens</strong> y roles sobre ASP.NET Core Identity; API Gateway con YARP.</li>
+            <li data-es="<strong>Kubernetes</strong> (Kind) con health checks y secrets; <strong>OpenTelemetry + Jaeger</strong> para trazas distribuidas."
+                data-en="<strong>Kubernetes</strong> (Kind) with health checks and secrets; <strong>OpenTelemetry + Jaeger</strong> for distributed tracing."><strong>Kubernetes</strong> (Kind) con health checks y secrets; <strong>OpenTelemetry + Jaeger</strong> para trazas distribuidas.</li>
+            <li data-es="Frontend en <strong>React + TypeScript</strong> con catálogo, usuarios, pedidos y salud de la plataforma."
+                data-en="<strong>React + TypeScript</strong> frontend with catalogue, users, orders and platform health.">Frontend en <strong>React + TypeScript</strong> con catálogo, usuarios, pedidos y salud de la plataforma.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>74</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+            <span><strong>5</strong> <span data-es="servicios" data-en="services">servicios</span></span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>ASP.NET Core 10</li><li>C#</li><li>EF Core</li><li>PostgreSQL</li><li>RabbitMQ</li><li>Docker</li><li>Kubernetes</li><li>OpenTelemetry</li><li>Jaeger</li><li>React</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/NexusCommerce" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="nexus" data-es="Ver imágenes" data-en="Images">Ver imágenes</button>
+          </div>
         </div>
-        <div class="cert-card scroll-reveal">
-          <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Certificación 2">
-          <h3 data-es="Certificado 2" data-en="Certificate 2">Certificado 2</h3>
-          <p data-es="Descripción breve del certificado 2." data-en="Short description of certificate 2.">
-            Descripción breve del certificado 2.
+      </article>
+
+      <!-- Onboarding (Phoenix) -->
+      <article class="project project-alt reveal" data-cat="backend fullstack">
+        <button class="project-media" type="button" data-gallery="onboarding" aria-label="Ver capturas de Bienvenida">
+          <img src="img/proyectos/onboarding-portada.webp" alt="Panel de RR. HH. de la aplicación de onboarding" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 9 capturas" data-en="View 9 screenshots">Ver 9 capturas</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker" data-es="Proyecto destacado · Elixir / Phoenix" data-en="Featured project · Elixir / Phoenix">Proyecto destacado · Elixir / Phoenix</p>
+          <h3 data-es="Bienvenida · Onboarding de empleados" data-en="Bienvenida · Employee onboarding">Bienvenida · Onboarding de empleados</h3>
+          <p data-es="Aplicación para gestionar la incorporación de personas nuevas con tres perfiles: RR. HH. da de alta y asigna plantilla y mentor; la persona nueva activa su cuenta, sube documentos y sigue su plan de bienvenida; el mentor comenta cada tarea con ella."
+             data-en="App to manage new-hire onboarding with three roles: HR registers the hire and assigns a template and mentor; the new hire activates their account, uploads documents and follows their welcome plan; the mentor comments on each task with them.">
+            Aplicación para gestionar la incorporación de personas nuevas con tres perfiles: RR. HH. da de alta y asigna plantilla y mentor; la persona nueva activa su cuenta, sube documentos y sigue su plan de bienvenida; el mentor comenta cada tarea con ella.
           </p>
+          <ul class="highlights">
+            <li data-es="<strong>Tiempo real</strong> con PubSub y Presence: campana de avisos, «escribiendo…» y quién está conectado."
+                data-en="<strong>Real time</strong> with PubSub and Presence: notification bell, “typing…” indicator and who's online."><strong>Tiempo real</strong> con PubSub y Presence: campana de avisos, «escribiendo…» y quién está conectado.</li>
+            <li data-es="<strong>Oban</strong>: emails en segundo plano, jobs programados, cron diario y reintentos."
+                data-en="<strong>Oban</strong>: background emails, scheduled jobs, daily cron and retries."><strong>Oban</strong>: emails en segundo plano, jobs programados, cron diario y reintentos.</li>
+            <li data-es="<strong>OTP</strong>: GenServer con tabla ETS que limita intentos de login contra fuerza bruta."
+                data-en="<strong>OTP</strong>: GenServer with an ETS table that rate-limits login attempts against brute force."><strong>OTP</strong>: GenServer con tabla ETS que limita intentos de login contra fuerza bruta.</li>
+            <li data-es="<strong>Ecto.Multi</strong> y <code>FOR UPDATE</code>, métricas con gráficas, subida de ficheros y API REST."
+                data-en="<strong>Ecto.Multi</strong> and <code>FOR UPDATE</code>, metrics with charts, file uploads and a REST API."><strong>Ecto.Multi</strong> y <code>FOR UPDATE</code>, métricas con gráficas, subida de ficheros y API REST.</li>
+            <li data-es="Release de Elixir, <strong>Docker</strong> en dos fases y preparado para <strong>Fly.io</strong> con health check."
+                data-en="Elixir release, two-stage <strong>Docker</strong> build, ready for <strong>Fly.io</strong> with a health check.">Release de Elixir, <strong>Docker</strong> en dos fases y preparado para <strong>Fly.io</strong> con health check.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>178</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+            <span><strong>ES / EN</strong></span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Elixir</li><li>Phoenix 1.7</li><li>LiveView</li><li>Ecto</li><li>PostgreSQL</li><li>Oban</li><li>Gettext</li><li>Docker</li><li>Fly.io</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/onboarding-phoenix" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="onboarding" data-es="Ver capturas" data-en="Screenshots">Ver capturas</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CloudForge -->
+      <article class="project reveal" data-cat="cloud backend">
+        <button class="project-media" type="button" data-gallery="cloudforge" aria-label="Ver imágenes de CloudForge">
+          <img src="img/proyectos/cloudforge-portada.webp" alt="Portada de CloudForge: API de despliegues con .NET 10, Terraform y Azure" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 5 imágenes" data-en="View 5 images">Ver 5 imágenes</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker" data-es="Proyecto destacado · .NET · Azure · Terraform" data-en="Featured project · .NET · Azure · Terraform">Proyecto destacado · .NET · Azure · Terraform</p>
+          <h3 data-es="CloudForge · API de despliegues con infraestructura como código" data-en="CloudForge · Deployment API with infrastructure as code">CloudForge · API de despliegues con infraestructura como código</h3>
+          <p data-es="API en ASP.NET Core 10 para registrar despliegues y seguir su estado, con Clean Architecture, la infraestructura de Azure descrita en Terraform y pipelines que no publican la imagen sin pasar los tests y un escaneo de seguridad."
+             data-en="ASP.NET Core 10 API to register deployments and track their status, with Clean Architecture, Azure infrastructure described in Terraform and pipelines that won't publish the image without passing the tests and a security scan.">
+            API en ASP.NET Core 10 para registrar despliegues y seguir su estado, con Clean Architecture, la infraestructura de Azure descrita en Terraform y pipelines que no publican la imagen sin pasar los tests y un escaneo de seguridad.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Reglas en el dominio</strong>: ciclo Pending → Running → Succeeded/Failed; una transición no válida devuelve <strong>409</strong> con ProblemDetails."
+                data-en="<strong>Rules in the domain</strong>: Pending → Running → Succeeded/Failed lifecycle; an invalid transition returns <strong>409</strong> with ProblemDetails."><strong>Reglas en el dominio</strong>: ciclo Pending → Running → Succeeded/Failed; una transición no válida devuelve <strong>409</strong> con ProblemDetails.</li>
+            <li data-es="<strong>Terraform modular</strong>: Resource Group, Storage, Log Analytics, Application Insights y App Service opcional con la imagen de GHCR."
+                data-en="<strong>Modular Terraform</strong>: Resource Group, Storage, Log Analytics, Application Insights and an optional App Service running the GHCR image."><strong>Terraform modular</strong>: Resource Group, Storage, Log Analytics, Application Insights y App Service opcional con la imagen de GHCR.</li>
+            <li data-es="<strong>GitHub Actions</strong>: tests, <strong>terraform validate</strong>, health check del contenedor, <strong>Trivy</strong> antes de publicar y <strong>CodeQL</strong>."
+                data-en="<strong>GitHub Actions</strong>: tests, <strong>terraform validate</strong>, container health check, <strong>Trivy</strong> before publishing and <strong>CodeQL</strong>."><strong>GitHub Actions</strong>: tests, <strong>terraform validate</strong>, health check del contenedor, <strong>Trivy</strong> antes de publicar y <strong>CodeQL</strong>.</li>
+            <li data-es="33 tests de xUnit, incluidos tests de integración que arrancan la API completa con WebApplicationFactory."
+                data-en="33 xUnit tests, including integration tests that boot the whole API with WebApplicationFactory.">33 tests de xUnit, incluidos tests de integración que arrancan la API completa con WebApplicationFactory.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>33</strong> tests</span>
+            <span><strong>3</strong> <span data-es="pipelines" data-en="pipelines">pipelines</span></span>
+            <span><strong>IaC</strong> Terraform</span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>ASP.NET Core 10</li><li>Microsoft Azure</li><li>Terraform</li><li>Docker</li><li>GitHub Actions</li><li>Trivy</li><li>CodeQL</li><li>xUnit</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/CloudForge" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="cloudforge" data-es="Ver imágenes" data-en="Images">Ver imágenes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ausencias (Phoenix) -->
+      <article class="project project-alt reveal" data-cat="backend fullstack">
+        <button class="project-media" type="button" data-gallery="ausencias" aria-label="Ver capturas de Ausencias">
+          <img src="img/proyectos/ausencias-portada.webp" alt="Panel del responsable en el gestor de ausencias" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 6 capturas" data-en="View 6 screenshots">Ver 6 capturas</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker">Elixir / Phoenix</p>
+          <h3 data-es="Ausencias · Gestor de vacaciones" data-en="Ausencias · Time-off manager">Ausencias · Gestor de vacaciones</h3>
+          <p data-es="Aplicación para pedir, aprobar y planificar vacaciones, asuntos propios y bajas, con login por roles, panel del responsable, calendario del equipo en tiempo real y festivos de Zaragoza."
+             data-en="App to request, approve and plan holidays, personal days and sick leave, with role-based login, a manager dashboard, a real-time team calendar and Zaragoza public holidays.">
+            Aplicación para pedir, aprobar y planificar vacaciones, asuntos propios y bajas, con login por roles, panel del responsable, calendario del equipo en tiempo real y festivos de Zaragoza.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Reglas de negocio</strong>: solo días laborables, festivos (Semana Santa calculada), saldo anual y sin solapes."
+                data-en="<strong>Business rules</strong>: working days only, public holidays (computed Easter), yearly balance and no overlaps."><strong>Reglas de negocio</strong>: solo días laborables, festivos (Semana Santa calculada), saldo anual y sin solapes.</li>
+            <li data-es="<strong>Permisos centralizados</strong> en un módulo <code>Policy</code> que usan la web, la API y los LiveViews."
+                data-en="<strong>Centralised permissions</strong> in a <code>Policy</code> module shared by the web, the API and LiveViews."><strong>Permisos centralizados</strong> en un módulo <code>Policy</code> que usan la web, la API y los LiveViews.</li>
+            <li data-es="<strong>Concurrencia</strong>: bloqueo de fila con <code>SELECT … FOR UPDATE</code> para que dos peticiones no se salten el saldo."
+                data-en="<strong>Concurrency</strong>: row lock with <code>SELECT … FOR UPDATE</code> so two requests can't bypass the balance check."><strong>Concurrencia</strong>: bloqueo de fila con <code>SELECT … FOR UPDATE</code> para que dos peticiones no se salten el saldo.</li>
+            <li data-es="<strong>Seguridad</strong>: PBKDF2, protección contra enumeración de emails, tokens revocables y CSV sin inyección de fórmulas."
+                data-en="<strong>Security</strong>: PBKDF2, protection against email enumeration, revocable tokens and formula-injection-safe CSV."><strong>Seguridad</strong>: PBKDF2, protección contra enumeración de emails, tokens revocables y CSV sin inyección de fórmulas.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>83</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+            <span><strong>LiveView</strong> + PubSub</span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Elixir</li><li>Phoenix 1.7</li><li>LiveView</li><li>Ecto</li><li>PostgreSQL</li><li>Swoosh</li><li>ExUnit</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/time-off-phoenix" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="ausencias" data-es="Ver capturas" data-en="Screenshots">Ver capturas</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Acortador de URLs -->
+      <article class="project reveal" data-cat="fullstack">
+        <button class="project-media" type="button" data-gallery="acortador" aria-label="Ver capturas del acortador de URLs">
+          <img src="img/proyectos/acortador-portada.webp" alt="Panel Mis enlaces del acortador de URLs" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 6 capturas" data-en="View 6 screenshots">Ver 6 capturas</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker">Full-stack · Next.js</p>
+          <h3 data-es="Acortador de URLs con estadísticas" data-en="URL shortener with analytics">Acortador de URLs con estadísticas</h3>
+          <p data-es="Aplicación para acortar enlaces, compartirlos con un código QR y medir cada clic: cuándo se abre, desde qué dispositivo y desde qué web llega la visita. Cada usuario gestiona solo sus propios enlaces."
+             data-en="App to shorten links, share them with a QR code and measure every click: when it's opened, from which device and from which website. Each user only manages their own links.">
+            Aplicación para acortar enlaces, compartirlos con un código QR y medir cada clic: cuándo se abre, desde qué dispositivo y desde qué web llega la visita. Cada usuario gestiona solo sus propios enlaces.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Estadísticas por enlace</strong>: clics por día, dispositivos y webs de origen, sin guardar IPs."
+                data-en="<strong>Per-link analytics</strong>: clicks per day, devices and referring sites, without storing IPs."><strong>Estadísticas por enlace</strong>: clics por día, dispositivos y webs de origen, sin guardar IPs.</li>
+            <li data-es="<strong>Código QR</strong> descargable y panel con buscador, edición y activar/desactivar."
+                data-en="Downloadable <strong>QR code</strong> and a dashboard with search, editing and enable/disable."><strong>Código QR</strong> descargable y panel con buscador, edición y activar/desactivar.</li>
+            <li data-es="<strong>Seguridad</strong>: cada usuario solo accede a lo suyo, solo destinos http(s), slugs reservados y login que no revela qué emails existen."
+                data-en="<strong>Security</strong>: users only access their own data, http(s)-only targets, reserved slugs and a login that doesn't reveal which emails exist."><strong>Seguridad</strong>: cada usuario solo accede a lo suyo, solo destinos http(s), slugs reservados y login que no revela qué emails existen.</li>
+            <li data-es="<strong>Prisma + PostgreSQL</strong> con migraciones, borrado en cascada e índices; validación con <strong>Zod</strong>."
+                data-en="<strong>Prisma + PostgreSQL</strong> with migrations, cascading deletes and indexes; <strong>Zod</strong> validation."><strong>Prisma + PostgreSQL</strong> con migraciones, borrado en cascada e índices; validación con <strong>Zod</strong>.</li>
+            <li data-es="<strong>Docker</strong> de producción y <strong>GitHub Actions</strong> con lint, tipos, tests y build."
+                data-en="Production <strong>Docker</strong> image and <strong>GitHub Actions</strong> with lint, types, tests and build."><strong>Docker</strong> de producción y <strong>GitHub Actions</strong> con lint, tipos, tests y build.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>34</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+            <span><strong>Docker</strong></span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>NextAuth</li><li>Prisma</li><li>PostgreSQL</li><li>Zod</li><li>Tailwind CSS</li><li>Vitest</li><li>Docker</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/acortador-de-urls" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="acortador" data-es="Ver capturas" data-en="Screenshots">Ver capturas</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Seguridad y resiliencia -->
+      <article class="project project-alt reveal" data-cat="cloud">
+        <button class="project-media" type="button" data-gallery="seguridad" aria-label="Ver capturas de Seguridad y resiliencia">
+          <img src="img/proyectos/seguridad-portada.webp" alt="Dashboard de Grafana durante un incidente: fuerza bruta y errores 5xx en /datos" loading="lazy" width="800" height="364">
+          <span class="media-badge" data-es="Ver 6 capturas" data-en="View 6 screenshots">Ver 6 capturas</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker" data-es="DevOps · Observabilidad · Seguridad" data-en="DevOps · Observability · Security">DevOps · Observabilidad · Seguridad</p>
+          <h3 data-es="Seguridad y resiliencia con observabilidad" data-en="Security &amp; resilience with observability">Seguridad y resiliencia con observabilidad</h3>
+          <p data-es="Entorno dockerizado que provoca fallos reales (caída de la base de datos, fuerza bruta) y comprueba que el sistema los detecta, avisa por Telegram y se recupera solo, guardando evidencias de cada incidente."
+             data-en="Dockerised environment that triggers real failures (database outage, brute force) and checks the system detects them, alerts via Telegram and recovers on its own, saving evidence of every incident.">
+            Entorno dockerizado que provoca fallos reales (caída de la base de datos, fuerza bruta) y comprueba que el sistema los detecta, avisa por Telegram y se recupera solo, guardando evidencias de cada incidente.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Prometheus + Alertmanager + Grafana</strong>: 4 reglas (caída, errores 5xx, fuerza bruta y latencia p95) con avisos a Telegram."
+                data-en="<strong>Prometheus + Alertmanager + Grafana</strong>: 4 rules (outage, 5xx errors, brute force and p95 latency) with Telegram alerts."><strong>Prometheus + Alertmanager + Grafana</strong>: 4 reglas (caída, errores 5xx, fuerza bruta y latencia p95) con avisos a Telegram.</li>
+            <li data-es="<strong>Nginx endurecido</strong>: único punto de entrada, rate limiting, cabeceras de seguridad y <code>/metrics</code> solo interno."
+                data-en="<strong>Hardened Nginx</strong>: single entry point, rate limiting, security headers and internal-only <code>/metrics</code>."><strong>Nginx endurecido</strong>: único punto de entrada, rate limiting, cabeceras de seguridad y <code>/metrics</code> solo interno.</li>
+            <li data-es="<strong>Resiliencia</strong>: liveness y readiness separados, timeouts cortos y modo degradado sin filtrar detalles internos."
+                data-en="<strong>Resilience</strong>: separate liveness and readiness, short timeouts and a degraded mode that leaks no internal details."><strong>Resiliencia</strong>: liveness y readiness separados, timeouts cortos y modo degradado sin filtrar detalles internos.</li>
+            <li data-es="<strong>Chaos engineering</strong>: scripts que provocan el incidente, esperan las alertas y comprueban la recuperación."
+                data-en="<strong>Chaos engineering</strong>: scripts that trigger the incident, wait for alerts and verify recovery."><strong>Chaos engineering</strong>: scripts que provocan el incidente, esperan las alertas y comprueban la recuperación.</li>
+            <li data-es="Contenedores sin privilegios y de solo lectura; CI que valida reglas, Nginx, Alertmanager e imagen."
+                data-en="Unprivileged, read-only containers; CI that validates rules, Nginx, Alertmanager and the image.">Contenedores sin privilegios y de solo lectura; CI que valida reglas, Nginx, Alertmanager e imagen.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>45 s</strong> <span data-es="hasta la primera alerta" data-en="to first alert">hasta la primera alerta</span></span>
+            <span><strong>11</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Docker Compose</li><li>Nginx</li><li>FastAPI</li><li>PostgreSQL</li><li>Prometheus</li><li>Alertmanager</li><li>Grafana</li><li>pytest</li><li>Bash</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/seguridad-resiliencia" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="seguridad" data-es="Ver capturas" data-en="Screenshots">Ver capturas</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- GitOps Compose Controller -->
+      <article class="project reveal" data-cat="cloud backend">
+        <button class="project-media" type="button" data-gallery="gitops" aria-label="Ver capturas de GitOps Compose Controller">
+          <img src="img/proyectos/gitops-portada.webp" alt="Salida real de make demo: cambio por commit, deriva corregida y rollback" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 3 imágenes" data-en="View 3 images">Ver 3 imágenes</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker">GitOps · Python · Docker</p>
+          <h3>GitOps Compose Controller</h3>
+          <p data-es="Controlador que mantiene un entorno de Docker Compose sincronizado con un repositorio Git, como Argo CD o Flux en Kubernetes: para cambiar el entorno se hace un commit y para volver atrás, un git revert."
+             data-en="Controller that keeps a Docker Compose environment in sync with a Git repository, like Argo CD or Flux on Kubernetes: changing the environment is a commit and rolling back is a git revert.">
+            Controlador que mantiene un entorno de Docker Compose sincronizado con un repositorio Git, como Argo CD o Flux en Kubernetes: para cambiar el entorno se hace un commit y para volver atrás, un git revert.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Bucle de reconciliación</strong> idempotente: aplica cada commit nuevo con <code>docker compose up</code>."
+                data-en="Idempotent <strong>reconciliation loop</strong>: applies every new commit with <code>docker compose up</code>."><strong>Bucle de reconciliación</strong> idempotente: aplica cada commit nuevo con <code>docker compose up</code>.</li>
+            <li data-es="<strong>Corrección de deriva</strong>: si alguien borra un contenedor a mano, lo vuelve a crear en el siguiente ciclo."
+                data-en="<strong>Drift correction</strong>: if someone deletes a container by hand, it is recreated on the next cycle."><strong>Corrección de deriva</strong>: si alguien borra un contenedor a mano, lo vuelve a crear en el siguiente ciclo.</li>
+            <li data-es="<strong>Git siempre manda</strong>: <code>fetch</code> + <code>reset</code>, sin bloquearse ante un <code>push --force</code>; nunca se cae ante errores."
+                data-en="<strong>Git always wins</strong>: <code>fetch</code> + <code>reset</code>, never stuck on a <code>push --force</code>; errors never crash it."><strong>Git siempre manda</strong>: <code>fetch</code> + <code>reset</code>, sin bloquearse ante un <code>push --force</code>; nunca se cae ante errores.</li>
+            <li data-es="<strong>API FastAPI</strong>: commit desplegado, servicios en ejecución, historial de eventos y detección de controlador parado."
+                data-en="<strong>FastAPI API</strong>: deployed commit, running services, event history and stopped-controller detection."><strong>API FastAPI</strong>: commit desplegado, servicios en ejecución, historial de eventos y detección de controlador parado.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>34</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+            <span><strong>make demo</strong></span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Python</li><li>FastAPI</li><li>Git</li><li>Docker</li><li>Docker Compose</li><li>pytest</li><li>GitHub Actions</li><li>Make</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/gitops-compose-controller" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="gitops" data-es="Ver imágenes" data-en="Images">Ver imágenes</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== Más proyectos ===== -->
+      <h3 class="subsection-title reveal" data-es="Más proyectos" data-en="More projects">Más proyectos</h3>
+      <div class="mini-grid">
+
+        <!-- Service Monitor -->
+        <article class="mini reveal" data-cat="cloud fullstack">
+          <div class="mini-cover cover-teal" aria-hidden="true">
+            <pre><span class="c-ok">● UP</span>    api-pagos     <span class="c-dim">142 ms</span>
+<span class="c-ok">● UP</span>    web-tienda    <span class="c-dim">88 ms</span>
+<span class="c-warn">● DOWN</span>  auth-service  <span class="c-dim">timeout</span>
+<span class="c-dim">🚨 Servicio caído → Telegram</span></pre>
+          </div>
+          <div class="mini-body">
+            <p class="project-kicker" data-es="Observabilidad · Full-stack" data-en="Observability · Full-stack">Observabilidad · Full-stack</p>
+            <h3>Service Monitor</h3>
+            <p data-es="Monitor de servicios HTTP: comprueba cada servicio en su intervalo, guarda el histórico y avisa por Telegram cuando uno se cae o se recupera."
+               data-en="HTTP service monitor: checks each service on its own interval, stores the history and notifies via Telegram when one goes down or recovers.">Monitor de servicios HTTP: comprueba cada servicio en su intervalo, guarda el histórico y avisa por Telegram cuando uno se cae o se recupera.</p>
+            <ul class="highlights">
+              <li data-es="Backend asíncrono con FastAPI y httpx; métricas para Prometheus." data-en="Async FastAPI + httpx backend; Prometheus metrics.">Backend asíncrono con FastAPI y httpx; métricas para Prometheus.</li>
+              <li data-es="Panel en Next.js con gráficas de latencia por servicio." data-en="Next.js dashboard with per-service latency charts.">Panel en Next.js con gráficas de latencia por servicio.</li>
+              <li data-es="Imagen publicada con GitHub Actions y despliegue en Kubernetes." data-en="Image published with GitHub Actions and deployed to Kubernetes.">Imagen publicada con GitHub Actions y despliegue en Kubernetes.</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>Prometheus</li><li>Grafana</li><li>Kubernetes</li></ul>
+            <a class="mini-link" href="https://github.com/hectormac35/service-monitor" target="_blank" rel="noopener" data-es="Ver código →" data-en="View code →">Ver código →</a>
+          </div>
+        </article>
+
+        <!-- EOP API -->
+        <article class="mini reveal" data-cat="backend ia">
+          <div class="mini-cover cover-indigo" aria-hidden="true">
+            <pre><span class="c-dim">POST /api/ai/requests/{id}/classify</span>
+{ <span class="c-info">"category"</span>: <span class="c-ok">"IT"</span>,
+  <span class="c-info">"priority"</span>: <span class="c-warn">"High"</span>,
+  <span class="c-info">"confidence"</span>: 0.86 }</pre>
+          </div>
+          <div class="mini-body">
+            <p class="project-kicker" data-es=".NET · IA · Keycloak" data-en=".NET · AI · Keycloak">.NET · IA · Keycloak</p>
+            <h3 data-es="EOP · Portal de solicitudes con IA" data-en="EOP · AI-assisted request portal">EOP · Portal de solicitudes con IA</h3>
+            <p data-es="API para un portal interno de solicitudes en el que una IA local resume, clasifica y propone respuestas, con identidad y roles gestionados por Keycloak."
+               data-en="API for an internal request portal where a local AI summarises, classifies and drafts replies, with identity and roles managed by Keycloak.">API para un portal interno de solicitudes en el que una IA local resume, clasifica y propone respuestas, con identidad y roles gestionados por Keycloak.</p>
+            <ul class="highlights">
+              <li data-es="JWT de Keycloak y políticas por rol, además de permisos por propietario." data-en="Keycloak JWT and role policies, plus owner-level permissions.">JWT de Keycloak y políticas por rol, además de permisos por propietario.</li>
+              <li data-es="Ollama (Llama 3.1) en local con salidas JSON validadas." data-en="Local Ollama (Llama 3.1) with validated JSON outputs.">Ollama (Llama 3.1) en local con salidas JSON validadas.</li>
+              <li data-es="Gestión de usuarios y roles mediante la Admin API de Keycloak." data-en="User and role management via the Keycloak Admin API.">Gestión de usuarios y roles mediante la Admin API de Keycloak.</li>
+            </ul>
+            <ul class="tags"><li>ASP.NET Core 8</li><li>EF Core</li><li>PostgreSQL</li><li>Keycloak</li><li>Ollama</li></ul>
+            <!-- Cuando lo subas a GitHub, cambia esta etiqueta por:
+            <a class="mini-link" href="https://github.com/hectormac35/eop-api" target="_blank" rel="noopener" data-es="Ver código →" data-en="View code →">Ver código →</a> -->
+            <span class="mini-soon" data-es="Repositorio en preparación" data-en="Repository coming soon">Repositorio en preparación</span>
+          </div>
+        </article>
+
+        <!-- Elyndra -->
+        <article class="mini reveal" data-cat="fullstack ia">
+          <button class="mini-cover mini-cover-img" type="button" data-gallery="elyndra" aria-label="Ver escenarios de Elyndra">
+            <img src="img/proyectos/elyndra-portada.webp" alt="Bosque del primer acto de Elyndra" loading="lazy" width="800" height="496">
+            <span class="media-badge" data-es="Ver 5 escenarios" data-en="View 5 scenes">Ver 5 escenarios</span>
+          </button>
+          <div class="mini-body">
+            <p class="project-kicker" data-es="IA · React · .NET" data-en="AI · React · .NET">IA · React · .NET</p>
+            <h3 data-es="Elyndra · NPC con IA" data-en="Elyndra · AI-driven NPC">Elyndra · NPC con IA</h3>
+            <p data-es="Aventura narrativa en 5 actos con una compañera controlada por un modelo de lenguaje local que recuerda la conversación y cambia de actitud según cómo la trates."
+               data-en="Five-act narrative adventure with a companion driven by a local language model that remembers the conversation and changes attitude depending on how you treat her.">Aventura narrativa en 5 actos con una compañera controlada por un modelo de lenguaje local que recuerda la conversación y cambia de actitud según cómo la trates.</p>
+            <ul class="highlights">
+              <li data-es="Motor emocional propio: ánimo, confianza y afinidad que cambian el tono." data-en="Custom emotion engine: mood, trust and affinity that shape the tone.">Motor emocional propio: ánimo, confianza y afinidad que cambian el tono.</li>
+              <li data-es="Prompts que mezclan guion fijo y respuestas generadas." data-en="Prompts mixing a fixed script with generated replies.">Prompts que mezclan guion fijo y respuestas generadas.</li>
+              <li data-es="Backend .NET por capas con partidas guardadas en SQLite." data-en="Layered .NET backend with saved games in SQLite.">Backend .NET por capas con partidas guardadas en SQLite.</li>
+            </ul>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>ASP.NET Core 8</li><li>EF Core</li><li>Ollama</li></ul>
+            <!-- Cuando lo subas a GitHub, cambia esta etiqueta por un enlace "Ver código →" -->
+            <span class="mini-soon" data-es="Repositorio en preparación" data-en="Repository coming soon">Repositorio en preparación</span>
+          </div>
+        </article>
+      </div>
+
+      <p class="no-results" hidden data-es="No hay proyectos en esta categoría." data-en="No projects in this category.">No hay proyectos en esta categoría.</p>
+
+      <p class="more-link reveal">
+        <a href="https://github.com/hectormac35" target="_blank" rel="noopener" data-es="Más en mi GitHub →" data-en="More on my GitHub →">Más en mi GitHub →</a>
+      </p>
+    </section>
+
+    <!-- ============ EXPERIENCIA Y FORMACIÓN ============ -->
+    <section id="experiencia" aria-labelledby="t-exp">
+      <h2 id="t-exp" class="reveal" data-es="Experiencia y formación" data-en="Experience &amp; education">Experiencia y formación</h2>
+      <div class="timeline-grid">
+        <div class="reveal">
+          <h3 class="col-title" data-es="Experiencia" data-en="Experience">Experiencia</h3>
+          <ol class="timeline">
+            <li class="card">
+              <span class="tl-date" data-es="Jun 2025 – nov 2025" data-en="Jun 2025 – Nov 2025">Jun 2025 – nov 2025</span>
+              <h4 data-es="Desarrollador de aplicaciones" data-en="Application developer">Desarrollador de aplicaciones</h4>
+              <p class="tl-org">CodeArts</p>
+              <!-- Añade aquí 1-2 líneas con lo que hiciste en CodeArts (tecnologías, tipo de proyecto) -->
+            </li>
+          </ol>
+        </div>
+        <div class="reveal">
+          <h3 class="col-title" data-es="Formación" data-en="Education">Formación</h3>
+          <ol class="timeline">
+            <li class="card">
+              <span class="tl-date">ILERNA</span>
+              <h4 data-es="Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)" data-en="Higher Technical Diploma in Multiplatform Application Development (DAM)">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
+            </li>
+          </ol>
+          <h3 class="col-title" id="certificaciones" data-es="Certificaciones" data-en="Certifications">Certificaciones</h3>
+          <ul class="certs">
+            <li class="card cert">
+              <span class="cert-ico ico-azure" aria-hidden="true">AZ</span>
+              <div><h4>Azure Administrator Associate</h4><p>Microsoft · AZ-104</p></div>
+            </li>
+            <li class="card cert">
+              <span class="cert-ico ico-aws" aria-hidden="true">AWS</span>
+              <div><h4>AWS Certified Cloud Practitioner</h4><p>Amazon Web Services</p></div>
+            </li>
+            <li class="card cert">
+              <span class="cert-ico ico-aws" aria-hidden="true">AI</span>
+              <div><h4>AWS Certified AI Practitioner</h4><p>Amazon Web Services</p></div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
-    <section id="habilidades" role="region" aria-label="Habilidades"  data-aos="fade-up">
-    <h2 data-es="Habilidades" data-en="Skills">Habilidades</h2>
-    <div class="skills">
-      <div class="skill-card scroll-reveal">
-        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Flutter">
-        <h3>Flutter</h3>
-        <div class="progress"><span style="width: 80%;"></span></div>
-      </div>
-      <div class="skill-card scroll-reveal">
-        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React Native">
-        <h3>React Native</h3>
-        <div class="progress"><span style="width: 70%;"></span></div>
-      </div>
-      <div class="skill-card scroll-reveal">
-        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt=".NET MAUI">
-        <h3>.NET MAUI</h3>
-        <div class="progress"><span style="width: 65%;"></span></div>
-      </div>
-    </div>
-  </section>
 
-  <section id="contacto" role="region" aria-label="Contacto" class="contact-section" data-aos="fade-up">
-    <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-    <p class="contact-intro" data-es="¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte." data-en="Do you have an idea or project in mind? I'd be delighted to hear from you.">
-      ¿Tienes alguna idea o proyecto en mente? Estaré encantado de escucharte.
+    <!-- ============ HABILIDADES ============ -->
+    <section id="habilidades" aria-labelledby="t-hab">
+      <h2 id="t-hab" class="reveal" data-es="Habilidades" data-en="Skills">Habilidades</h2>
+      <div class="skills">
+        <div class="card skill-group reveal">
+          <h3>Backend</h3>
+          <ul class="tags"><li>C# · ASP.NET Core</li><li>Python · FastAPI</li><li>Elixir · Phoenix</li><li>Clean Architecture</li><li>CQRS · MediatR</li><li>API REST</li><li>OTP · Oban</li></ul>
+        </div>
+        <div class="card skill-group reveal">
+          <h3 data-es="Frontend" data-en="Frontend">Frontend</h3>
+          <ul class="tags"><li>React</li><li>Next.js</li><li>TypeScript</li><li>Phoenix LiveView</li><li>Tailwind CSS</li><li>HTML · CSS · JavaScript</li></ul>
+        </div>
+        <div class="card skill-group reveal">
+          <h3 data-es="Datos y mensajería" data-en="Data &amp; messaging">Datos y mensajería</h3>
+          <ul class="tags"><li>PostgreSQL</li><li>SQL</li><li>EF Core</li><li>Ecto</li><li>Prisma</li><li>SQLAlchemy</li><li>RabbitMQ</li><li>Transactional Outbox</li></ul>
+        </div>
+        <div class="card skill-group reveal">
+          <h3>Cloud y DevOps</h3>
+          <ul class="tags"><li>Microsoft Azure</li><li>AWS</li><li>Terraform</li><li>Docker</li><li>Kubernetes</li><li>GitHub Actions</li><li>GitOps</li><li>Git</li></ul>
+        </div>
+        <div class="card skill-group reveal">
+          <h3 data-es="Observabilidad y seguridad" data-en="Observability &amp; security">Observabilidad y seguridad</h3>
+          <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>Alertmanager</li><li>OpenTelemetry · Jaeger</li><li>Keycloak · JWT</li><li>Nginx</li><li>CodeQL</li></ul>
+        </div>
+        <div class="card skill-group reveal">
+          <h3 data-es="IA y calidad" data-en="AI &amp; quality">IA y calidad</h3>
+          <ul class="tags"><li>Ollama · LLM</li><li data-es="Ingeniería de prompts" data-en="Prompt engineering">Ingeniería de prompts</li><li>xUnit</li><li>ExUnit</li><li data-es="Integración continua" data-en="Continuous integration">Integración continua</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section id="contacto" class="contact-section" aria-labelledby="t-con">
+      <h2 id="t-con" class="reveal" data-es="Contacto" data-en="Contact">Contacto</h2>
+      <p class="contact-intro reveal" data-es="¿Tienes una vacante o un proyecto en el que pueda ayudar? Escríbeme y hablamos."
+         data-en="Do you have an opening or a project I could help with? Get in touch and let's talk.">
+        ¿Tienes una vacante o un proyecto en el que pueda ayudar? Escríbeme y hablamos.
+      </p>
+      <div class="contact-cards reveal">
+        <a class="contact-card" href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <span><strong>LinkedIn</strong><small data-es="Escríbeme un mensaje" data-en="Send me a message">Escríbeme un mensaje</small></span>
+        </a>
+        <a class="contact-card" href="https://github.com/hectormac35" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          <span><strong>GitHub</strong><small>hectormac35</small></span>
+        </a>
+        <!-- Si quieres mostrar tu email, descomenta y cambia la dirección:
+        <a class="contact-card" href="mailto:tu-email@ejemplo.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2z M2 5l10 8 10-8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span><strong>Email</strong><small>tu-email@ejemplo.com</small></span>
+        </a>
+        -->
+      </div>
+
+      <!-- FORMULARIO (opcional): crea un formulario gratis en https://formspree.io,
+           copia tu ID (p. ej. "xyzabcd") y descomenta este bloque.
+      <form action="https://formspree.io/f/TU_ID" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Tu nombre" data-ph-es="Tu nombre" data-ph-en="Your name" required>
+        <input type="email" name="email" placeholder="Tu email" data-ph-es="Tu email" data-ph-en="Your email" required>
+        <textarea name="message" rows="5" placeholder="Tu mensaje" data-ph-es="Tu mensaje" data-ph-en="Your message" required></textarea>
+        <button type="submit" class="btn" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
+      </form>
+      -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Héctor Macarrilla Maluenda ·
+      <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/hectormac35" target="_blank" rel="noopener">GitHub</a>
     </p>
-    <form action="https://formspree.io/f/{your-id}" method="POST" class="contact-form">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Tu nombre" data-es="Tu nombre" data-en="Your name" required>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Tu email" data-es="Tu email" data-en="Your email" required>
-      </div>
-      <div class="form-group">
-        <textarea name="message" placeholder="Tu mensaje" data-es="Tu mensaje" data-en="Your message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn" data-es="Enviar mensaje" data-en="Send Message">Enviar mensaje</button>
-    </form>
-  </section>
+  </footer>
 
-  
+  <button id="toTop" type="button" aria-label="Volver arriba">↑</button>
 
-    <footer>
-    <p>© 2025 Héctor Macarrilla |
-       <a href="https://www.linkedin.com/in/hector-macarrilla-maluenda-61ab8289/" target="_blank">LinkedIn</a> |
-       <a href="https://github.com/hectormac35" target="_blank">GitHub</a>
-    </p>
-  
-    <button id="toTop" title="Ir arriba">↑</button>
-    </footer>
-    
+  <!-- Visor de capturas -->
+  <dialog id="lightbox" aria-label="Capturas del proyecto">
+    <button class="lb-close" type="button" aria-label="Cerrar">✕</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Anterior">‹</button>
+    <figure>
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" aria-label="Siguiente">›</button>
+  </dialog>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Loader
-    window.addEventListener("load", function() {
-      const loader = document.getElementById("loader");
-      loader.style.opacity = "0";
-      setTimeout(() => loader.style.display = "none", 500);
-    });
-
-
-    const langToggle = document.getElementById('lang-toggle');
-    langToggle.addEventListener('click', () => {
-      const currentLang = document.documentElement.lang;
-      document.querySelectorAll('[data-es]').forEach(el => {
-        el.innerText = (currentLang === 'es') ? el.getAttribute('data-en') : el.getAttribute('data-es');
-      });
-      document.querySelectorAll('input, textarea').forEach(el => {
-        if (el.hasAttribute('data-es') && el.hasAttribute('data-en')) {
-          el.placeholder = (currentLang === 'es') ? el.getAttribute('data-en') : el.getAttribute('data-es');
-        }
-      });
-      document.documentElement.lang = (currentLang === 'es') ? 'en' : 'es';
-    });
-
-    // Menú hamburguesa
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-
-<script>
-  // Scroll Reveal avanzado
-  const revealElements = document.querySelectorAll('.scroll-reveal');
-  const revealOnScroll = () => {
-    revealElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.classList.add('visible');
-      }
-    });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
-
-
-<script>
-  // Botón Ir arriba
-  const toTop = document.getElementById("toTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      toTop.style.display = "block";
-    } else {
-      toTop.style.display = "none";
-    }
-  });
-  toTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-
-
-<script>
-  // Partículas en el hero
-  const canvas = document.getElementById('particles');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = document.querySelector('.hero').offsetHeight;
-
-  const particlesArray = [];
-  const colors = ['#2563EB', '#60A5FA', '#38BDF8'];
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.radius = Math.random() * 3 + 1;
-      this.color = colors[Math.floor(Math.random() * colors.length)];
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-      this.draw();
-    }
-  }
-
-  function initParticles() {
-    for (let i = 0; i < 60; i++) {
-      particlesArray.push(new Particle());
-    }
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particlesArray.forEach(p => p.update());
-    requestAnimationFrame(animateParticles);
-  }
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = document.querySelector('.hero').offsetHeight;
-  });
-
-  initParticles();
-  animateParticles();
-</script>
-
-<script>
-  document.querySelector('a[href="#inicio"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-</script>
-  
-<script>
-  const logo = document.getElementById('logo');
-  document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    logo.src = document.body.classList.contains('dark-mode') 
-      ? 'logo-hector-blanco.png' 
-      : 'logo-hector.png';
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
