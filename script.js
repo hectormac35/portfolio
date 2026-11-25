@@ -106,7 +106,13 @@
       ['onboarding-movil', 'Vista en el móvil', 'Mobile view']
     ],
     nexus: [
-      ['nexus-arquitectura', 'Arquitectura: API Gateway, microservicios, RabbitMQ con Outbox, Kubernetes y observabilidad', 'Architecture: API Gateway, microservices, RabbitMQ with Outbox, Kubernetes and observability'],
+      ['nexus-panel', 'Panel de administración en React con datos reales de los microservicios', 'React admin panel with live data from the microservices'],
+      ['nexus-pedidos', 'Pedidos: importes calculados en el servidor con los precios del catálogo', 'Orders: totals computed server-side from catalogue prices'],
+      ['nexus-catalogo', 'Catálogo de productos (escritura solo para administradores)', 'Product catalogue (write access for administrators only)'],
+      ['nexus-usuarios', 'Gestión de usuarios y roles', 'User and role management'],
+      ['nexus-plataforma', 'Salud de la plataforma: estado y latencia de cada servicio', 'Platform health: status and latency of each service'],
+      ['nexus-arquitectura', 'Arquitectura: gateway YARP, microservicios, RabbitMQ con Outbox y Jaeger', 'Architecture: YARP gateway, microservices, RabbitMQ with Outbox and Jaeger'],
+      ['nexus-flujo-pedido', 'Crear un pedido: el usuario sale del token y el precio del catálogo', 'Creating an order: the user comes from the token and the price from the catalogue'],
       ['nexus-jaeger', 'Trazas distribuidas en Jaeger (OpenTelemetry)', 'Distributed traces in Jaeger (OpenTelemetry)'],
       ['nexus-kubernetes', 'Todos los servicios corriendo en Kubernetes', 'All services running on Kubernetes']
     ],
