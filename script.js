@@ -146,6 +146,15 @@
       ['seguridad-prometheus-errores-datos', 'Respuestas 200 frente a 503 en /datos durante tres caídas de la base de datos', '200 vs 503 responses on /datos during three database outages'],
       ['seguridad-prometheus-fuerza-bruta', 'Logins fallidos por minuto durante los ataques de fuerza bruta', 'Failed logins per minute during the brute-force attacks']
     ],
+    svcmon: [
+      ['svcmon-panel', 'Panel en Next.js con datos reales: estado, latencia y uptime de cada servicio', 'Next.js panel with live data: status, latency and uptime for each service'],
+      ['svcmon-detalle', 'Detalle de un servicio: uptime, latencia p95 y gráficas', 'Service detail: uptime, p95 latency and charts'],
+      ['svcmon-grafana', 'Dashboard de Grafana provisionado automáticamente', 'Automatically provisioned Grafana dashboard'],
+      ['svcmon-prometheus', 'Prometheus detectando un servicio caído (regla ServicioCaido)', 'Prometheus catching a down service (ServicioCaido rule)'],
+      ['svcmon-alertas', 'Alertas sin spam: solo se avisa cuando cambia el estado', 'No alert spam: notifications only when the state changes'],
+      ['svcmon-arquitectura', 'Arquitectura: Next.js, FastAPI, SQLite, Telegram, Prometheus y Grafana', 'Architecture: Next.js, FastAPI, SQLite, Telegram, Prometheus and Grafana'],
+      ['svcmon-portada', 'Service Monitor', 'Service Monitor']
+    ],
     vault: [
       ['vault-demo', 'Salida real de la demo: se revocan las credenciales y la API recibe un usuario nuevo en 15 s', 'Real demo output: credentials are revoked and the API gets a new user in 15 s'],
       ['vault-arquitectura', 'Quién ve qué: volúmenes separados para el agente y la app', 'Who sees what: separate volumes for the agent and the app'],

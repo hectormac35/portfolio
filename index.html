@@ -451,32 +451,47 @@
         </div>
       </article>
 
+      <!-- Service Monitor -->
+      <article class="project reveal" data-cat="cloud fullstack">
+        <button class="project-media" type="button" data-gallery="svcmon" aria-label="Ver imágenes de Service Monitor">
+          <img src="img/proyectos/svcmon-portada.webp" alt="Service Monitor: panel de monitorización de servicios HTTP" loading="lazy" width="800" height="496">
+          <span class="media-badge" data-es="Ver 7 imágenes" data-en="View 7 images">Ver 7 imágenes</span>
+        </button>
+        <div class="project-body">
+          <p class="project-kicker" data-es="Observabilidad · Full-stack · DevOps" data-en="Observability · Full-stack · DevOps">Observabilidad · Full-stack · DevOps</p>
+          <h3 data-es="Service Monitor · Monitor de disponibilidad" data-en="Service Monitor · Uptime monitor">Service Monitor · Monitor de disponibilidad</h3>
+          <p data-es="Monitor tipo UptimeRobot hecho desde cero: comprueba endpoints HTTP con su propio intervalo, guarda el histórico, calcula uptime y latencia y avisa por Telegram cuando un servicio cae o se recupera."
+             data-en="An UptimeRobot-style monitor built from scratch: checks HTTP endpoints on their own interval, keeps the history, computes uptime and latency and notifies via Telegram when a service goes down or recovers.">
+            Monitor tipo UptimeRobot hecho desde cero: comprueba endpoints HTTP con su propio intervalo, guarda el histórico, calcula uptime y latencia y avisa por Telegram cuando un servicio cae o se recupera.
+          </p>
+          <ul class="highlights">
+            <li data-es="<strong>Alertas por transición</strong>: un aviso al caer y otro al volver, en lugar de uno por cada check fallido."
+                data-en="<strong>Transition-based alerts</strong>: one notice when a service goes down and one when it comes back, instead of one per failed check."><strong>Alertas por transición</strong>: un aviso al caer y otro al volver, en lugar de uno por cada check fallido.</li>
+            <li data-es="Planificador <strong>asíncrono</strong> en FastAPI que respeta el intervalo de cada servicio, comprueba en paralelo y no se detiene ante errores."
+                data-en="<strong>Async</strong> FastAPI scheduler that honours each service's interval, checks in parallel and survives errors.">Planificador <strong>asíncrono</strong> en FastAPI que respeta el intervalo de cada servicio, comprueba en paralelo y no se detiene ante errores.</li>
+            <li data-es="<strong>Prometheus + Grafana</strong> provisionados: métricas de negocio, dashboard listo y 3 reglas de alerta."
+                data-en="Provisioned <strong>Prometheus + Grafana</strong>: business metrics, a ready-made dashboard and 3 alerting rules.">Provisionados <strong>Prometheus + Grafana</strong>: métricas de negocio, dashboard listo y 3 reglas de alerta.</li>
+            <li data-es="Panel en <strong>Next.js + React Query</strong> con uptime de 24 h, latencias y acciones de comprobar, pausar y borrar."
+                data-en="<strong>Next.js + React Query</strong> panel with 24 h uptime, latencies and check, pause and delete actions.">Panel en <strong>Next.js + React Query</strong> con uptime de 24 h, latencias y acciones de comprobar, pausar y borrar.</li>
+          </ul>
+          <div class="stats">
+            <span><strong>15</strong> <span data-es="tests" data-en="tests">tests</span></span>
+            <span><strong>CI</strong> GitHub Actions</span>
+            <span><strong>4</strong> <span data-es="contenedores" data-en="containers">contenedores</span></span>
+          </div>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>TypeScript</li><li>Prometheus</li><li>Grafana</li><li>Docker</li><li>Kubernetes</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-sm" href="https://github.com/hectormac35/service-monitor" target="_blank" rel="noopener" data-es="Ver código" data-en="View code">Ver código</a>
+            <button class="btn btn-sm btn-outline" type="button" data-gallery="svcmon" data-es="Ver imágenes" data-en="Images">Ver imágenes</button>
+          </div>
+        </div>
+      </article>
+
       <!-- ===== Más proyectos ===== -->
       <h3 class="subsection-title reveal" data-es="Más proyectos" data-en="More projects">Más proyectos</h3>
       <div class="mini-grid">
-
-        <!-- Service Monitor -->
-        <article class="mini reveal" data-cat="cloud fullstack">
-          <div class="mini-cover cover-teal" aria-hidden="true">
-            <pre><span class="c-ok">● UP</span>    api-pagos     <span class="c-dim">142 ms</span>
-<span class="c-ok">● UP</span>    web-tienda    <span class="c-dim">88 ms</span>
-<span class="c-warn">● DOWN</span>  auth-service  <span class="c-dim">timeout</span>
-<span class="c-dim">🚨 Servicio caído → Telegram</span></pre>
-          </div>
-          <div class="mini-body">
-            <p class="project-kicker" data-es="Observabilidad · Full-stack" data-en="Observability · Full-stack">Observabilidad · Full-stack</p>
-            <h3>Service Monitor</h3>
-            <p data-es="Monitor de servicios HTTP: comprueba cada servicio en su intervalo, guarda el histórico y avisa por Telegram cuando uno se cae o se recupera."
-               data-en="HTTP service monitor: checks each service on its own interval, stores the history and notifies via Telegram when one goes down or recovers.">Monitor de servicios HTTP: comprueba cada servicio en su intervalo, guarda el histórico y avisa por Telegram cuando uno se cae o se recupera.</p>
-            <ul class="highlights">
-              <li data-es="Backend asíncrono con FastAPI y httpx; métricas para Prometheus." data-en="Async FastAPI + httpx backend; Prometheus metrics.">Backend asíncrono con FastAPI y httpx; métricas para Prometheus.</li>
-              <li data-es="Panel en Next.js con gráficas de latencia por servicio." data-en="Next.js dashboard with per-service latency charts.">Panel en Next.js con gráficas de latencia por servicio.</li>
-              <li data-es="Imagen publicada con GitHub Actions y despliegue en Kubernetes." data-en="Image published with GitHub Actions and deployed to Kubernetes.">Imagen publicada con GitHub Actions y despliegue en Kubernetes.</li>
-            </ul>
-            <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>Prometheus</li><li>Grafana</li><li>Kubernetes</li></ul>
-            <a class="mini-link" href="https://github.com/hectormac35/service-monitor" target="_blank" rel="noopener" data-es="Ver código →" data-en="View code →">Ver código →</a>
-          </div>
-        </article>
 
         <!-- EOP API -->
         <article class="mini reveal" data-cat="backend ia">
